@@ -66,7 +66,7 @@ gulp.task('styles', () => {
     }))
     .on("error", notify.onError({
       message: "Error: <%= error.message %>",
-      title: "Error running something"
+      title: "Error running somew3hing"
     }))
     .pipe(postcss( plugins ))
     .pipe($.if(dev, $.sourcemaps.write()))

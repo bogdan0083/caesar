@@ -1,0 +1,18 @@
+- var links = ['О компании', 'Акции', 'Пресс-центр', 'Новости', 'Контакты']
+
+// start mobile-menu
+.mobile-menu
+  .phones
+    .phone
+      span.phone-caption Головной офис
+      a(href="#") 8 (495) 778 98 97
+    .phone
+      span.phone-caption Департамент продаж
+      a(href="#") 8 (495) 778 98 98
+  nav.mobile-nav
+    ul.reset-list
+      li: a.mobile-nav-item-big(href="#") Жилая недвижимость
+      li: a.mobile-nav-item-big(href="#") Коммерческая недвижимость
+      for link, idx in links
+        li: a(href="#") #{link}
+// end mobile-menu

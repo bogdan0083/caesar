@@ -1,4 +1,26 @@
 //BEGIN header
-header.site-header
-  p header
+header.header
+  .header-topline
+    .container
+      a.callback.popup-link(href="#popup-callback")
+        include ../data/phone.svg
+        span Заказать звонок
+      .phones
+        .phone
+          span.phone-caption Головной офис
+          a(href="#") 8 (495) 778 98 97
+        .phone
+          span.phone-caption Департамент продаж
+          a(href="#") 8 (495) 778 98 98
+      a.nav-trigger-wrapper(href="#" role="button")
+        span.nav-trigger
+  .header-middle
+    .container
+      .wrapper
+        a.header-link(href="#") Жилая недвижимость
+        a.logo(href="#")
+          .logo-inner
+            img.logo-img(src="images/logo.png" alt="Sezar group")
+        a.header-link(href="#") Коммерческая недвижимость
+      include _links.pug
 //END header

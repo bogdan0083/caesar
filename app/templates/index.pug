@@ -2,7 +2,97 @@
 extends layouts/_layout
 block head
   - var title = 'Main page'
+  - var promoDelay = 300
+  - var promoDuration = 300
+
 block content
-  h1 Index page
-  h2 asd
-  +icon('heart')
+  // start promo
+  section.promo
+    nav.frontpage-nav
+      ul.reset-list
+        li: a.active(href="#promo" role="button"): span
+        li: a(href="#promo" role="button"): span
+        li: a(href="#promo" role="button"): span
+        li: a(href="#promo" role="button"): span
+    .promo-backgrounds.js-promo-backgrounds
+      .promo-background.js-promo-background(style="background: url(../images/promo-bg2.jpg) no-repeat center / cover")
+      .promo-background.js-promo-background(style="background: url(../images/promo-bg2.jpg) no-repeat center / cover")
+      .promo-background.js-promo-background(style="background: url(../images/promo-bg3.jpg) no-repeat center / cover")
+      .promo-background.js-promo-background(style="background: url(../images/promo-bg4.jpg) no-repeat center / cover")
+      .promo-background.js-promo-background(style="background: url(../images/promo-bg5.jpg) no-repeat center / cover")
+      .promo-background.js-promo-background(style="background: url(../images/promo-bg6.jpg) no-repeat center / cover")
+    .container
+      h1.promo-heading
+        span.promo-heading-top(data-aos="fade-up" data-aos-anchor=".promo" data-aos-duration="700") холдинг «Sezar Group» —
+        span.promo-heading-bottom(data-aos="fade-up" data-aos-anchor=".promo" data-aos-duration="700" data-aos-delay="400") застройщик с безупречной репутацией
+      .promo-items
+        .promo-cell
+          a.promo-item(href="#")
+            .icon(data-aos="fade-up" data-aos-anchor=".promo" data-aos-duration="500" data-aos-delay="600")
+              img(src="images/property-ic1.png" alt="«Николин парк»")
+            h4.heading(data-aos="fade-up" data-aos-anchor=".promo" data-aos-delay="900") «Николин парк»
+            p.caption(data-aos="fade-up" data-aos-anchor=".promo" data-aos-delay="1000") Жилая недвижимость
+            p.desc Москва, Новомосковский АО, Сосенское С/П вблизи деревни Николо-Хованское
+        .promo-cell
+          a.promo-item(href="#")
+            .icon(data-aos="fade-up" data-aos-anchor=".promo" data-aos-duration="500" data-aos-delay="1300")
+              img(src="images/property-ic2.png" alt="«Рассказово»")
+            h4.heading(data-aos="fade-up" data-aos-anchor=".promo" data-aos-delay="1700") «Рассказово»
+            p.caption(data-aos="fade-up" data-aos-anchor=".promo" data-aos-delay="1800") Жилая недвижимость
+            p.desc Москва, Новомосковский АО, Сосенское С/П вблизи деревни Николо-Хованское
+        .promo-cell
+          a.promo-item(href="#")
+            .icon(data-aos="fade-up" data-aos-anchor=".promo" data-aos-duration="500" data-aos-delay="600")
+              img(src="images/property-ic3.png" alt="«Дитнастия»")
+            h4.heading(data-aos="fade-up" data-aos-anchor=".promo" data-aos-delay="900") «Дитнастия»
+            p.caption(data-aos="fade-up" data-aos-anchor=".promo" data-aos-delay="1000") Жилая недвижимость
+            p.desc Москва, Новомосковский АО, Сосенское С/П вблизи деревни Николо-Хованское
+        .promo-cell
+          a.promo-item(href="#")
+            .icon(data-aos="fade-up" data-aos-anchor=".promo" data-aos-duration="500" data-aos-delay="1300")
+              img(src="images/property-ic4.png" alt="ТРЦ «МариЭль»")
+            h4.heading(data-aos="fade-up" data-aos-anchor=".promo" data-aos-delay="1700") ТРЦ «МариЭль»
+            p.caption(data-aos="fade-up" data-aos-anchor=".promo" data-aos-delay="1800") Коммерческая недвижимость
+            p.desc Москва, Новомосковский АО, Сосенское С/П вблизи деревни Николо-Хованское
+        .promo-cell
+          a.promo-item(href="#")
+            .icon(data-aos="fade-up" data-aos-anchor=".promo" data-aos-duration="500" data-aos-delay="600")
+              img(src="images/property-ic5.png" alt="«Парадайz»")
+            h4.heading(data-aos="fade-up" data-aos-anchor=".promo" data-aos-delay="900") «Парадайz»
+            p.caption(data-aos="fade-up" data-aos-anchor=".promo" data-aos-delay="1000") Коммерческая недвижимость
+            p.desc Москва, Новомосковский АО, Сосенское С/П вблизи деревни Николо-Хованское
+        .promo-cell
+          a.promo-item(href="#")
+            .icon(data-aos="fade-up" data-aos-anchor=".promo" data-aos-duration="500" data-aos-delay="1300")
+              img(src="images/property-ic6.png" alt="БЦ «Фортуна»")
+            h4.heading(data-aos="fade-up" data-aos-anchor=".promo" data-aos-delay="1700") БЦ «Фортуна»
+            p.caption(data-aos="fade-up" data-aos-anchor=".promo" data-aos-delay="1800") Коммерческая недвижимость
+            p.desc Москва, Новомосковский АО, Сосенское С/П вблизи деревни Николо-Хованское
+    .mouse
+  // end promo
+  // start about-us
+  section.about-us
+    .container
+      .circles-container
+        .circles
+          .circle-1
+            .circle-content
+              a.circle-item
+                include data/cup.svg
+                .circle-content
+                  img(src="" alt="")
+                .date 2014
+        .about-us-logo
+          .logo-circle
+            img(src="images/logo-fs.png" alt="Sezar Group")
+          .logo-text
+            span Sezar 
+            span Group
+      .about-us-group-text
+        .row
+          .about-us-text Более 10 лет результативной работы принесли холдингу Sezar Group портфель знаковых объектов, безупречную репутацию, а также надежных партнеров
+          .about-us-text Множество престижных наград, среди которых «Гарант качества и надежности» по итогам всероссийской премии «Национальная марка качества-2014»
+      a.btn
+        span О компании
+
+  // end about-us

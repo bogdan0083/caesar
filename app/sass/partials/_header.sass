@@ -1,0 +1,169 @@
+.header
+  text-align: center
+  position: relative
+  z-index: 30
+  +rmin($screen-sm)
+    &:after
+      content: ''
+      position: absolute
+      width: 83px
+      margin-left: -41px
+      height: 7px
+      left: 50%
+      bottom: -7px
+      background: url(../images/triangle.png) no-repeat center
+  .logo
+    display: inline-block
+    +rmin($screen-sm)
+      position: relative
+    +rmin($screen-md)
+      margin-left: 50px
+      margin-right: 50px
+      top: 2px
+    &-inner
+      position: relative
+      display: inline-block
+      padding-left: 100px
+      padding-right: 100px
+      +rmin($screen-md)
+        padding-left: 120px
+        padding-right: 120px
+      &:before, &:after
+        content: ''
+        position: absolute
+        bottom: 13px
+        left: 0
+        width: 85px
+        height: 1px
+        background-color: $color-brown
+      &:after
+        left: auto
+        right: 0
+    +r($screen-sm)
+      width: 33px
+      height: 39px
+      overflow: hidden
+      display: inline-block
+      background: url(../images/logo-fs.png) no-repeat center / 100% 100%
+      position: absolute
+      left: 15px
+      top: 10px
+      &-inner
+        display: none
+  &-topline
+    border-bottom: 1px solid $color-brown
+    height: 60px
+    text-align: center
+    .container
+      position: relative
+    +rmin($screen-sm)
+      border-bottom-color: #f2f2f2
+      text-align: right
+  &-middle
+    +rmin($screen-sm)
+      padding-top: 26px
+      padding-bottom: 10px
+    +rmin($screen-md)
+      .wrapper
+        position: relative
+        left: 38px
+  .callback
+    display: inline-block
+    vertical-align: middle
+    text-decoration: none
+    text-align: right
+    color: #626262
+    span
+      margin-left: 9px
+    span, svg
+      display: inline-block
+      vertical-align: middle
+  .phones
+    display: none
+    color: #939393
+    text-align: center
+    font-size: 13px
+    .phone
+      display: block
+      +rmin($screen-sm)
+        display: inline-block
+        margin-left: 58px
+    a
+      text-decoration: none
+      color: #1a1a1a
+    +rmin($screen-sm)
+      display: inline-block
+  .phone, .callback
+    padding: 2px 0
+    display: inline-block
+    vertical-align: middle
+    height: 55px
+    line-height: 55px
+  .callback
+    vertical-align: middle
+    display: inline-block
+    font-size: 13px
+    &:hover
+      span
+        text-decoration: underline
+    +r($screen-sm)
+      height: 40px
+      line-height: 40px
+      position: absolute
+      width: 40px
+      border-radius: 50%
+      overflow: hidden
+      border: 1px solid $color-brown
+      right: 80px
+      top: 9px
+      svg
+        position: absolute
+        margin: auto
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+      span
+        display: none
+  &-link
+    display: none
+    text-decoration: none
+    padding: 20px
+    text-transform: uppercase
+    font-size: 15px
+    +tr()
+    &:hover
+      color: $color-gold
+    +avenir()
+    +rmin($screen-sm)
+      display: inline-block
+
+.main-nav
+  display: none
+  text-align: center
+  li
+    display: inline-block
+  a
+    color: #171717
+    transition: all 0.3s
+    opacity: .6
+    text-decoration: none
+    font-size: 16px
+    padding: 10px 20px 16px
+    display: inline-block
+    &:hover
+      opacity: 1
+  +rmin($screen-sm)
+    display: block
+
+.phones
+  .phone
+    a
+      font-size: 15px
+      +avenir()
+  .phone-caption
+      color: $color-gray
+      opacity: .8
+      display: inline-block
+      margin-right: 10px
+
