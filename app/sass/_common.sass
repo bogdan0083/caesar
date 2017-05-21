@@ -124,3 +124,84 @@ img
   margin: 0
 
 
+/* start socials */
+.socials
+  text-align: center
+
+.social-icon
+  display: inline-block
+  vertical-align: middle
+  width: 48px
+  height: 48px
+  border-radius: 50%
+  border: 1px solid #d6d6d6
+  position: relative
+  margin: 10px 7px
+  transition: all 0.3s
+  svg
+    margin: auto
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    position: absolute
+    width: 30px
+    height: 20px
+    path
+      fill: #7e7e7e
+      transition: all 0.3s
+  &:hover
+    background-color: $color-gold
+    border-color: $color-gold
+    transform: scale(1.1)
+    svg path
+      fill: white
+/* end socials */
+
+/* start footer */
+.footer
+  text-align: center
+  padding: 30px 0
+  +rmin($screen-sm)
+    padding: 60px 0 40px
+  .logo
+    margin-bottom: 30px
+    display: inline-block
+  &-nav
+    font-size: 16px
+    margin: 0 auto 20px
+    padding-top: 14px
+    max-width: 645px
+    &:before
+      content: ''
+      top: 0
+      left: 50%
+      transform: translateX(-50%)
+      width: 10px
+      opacity: 0
+      height: 1px
+      background-color: #e5e5e5
+      position: absolute
+      transition: all .6s 1s
+    &.aos-animate:before
+      width: 100%
+      opacity: 1
+    +rmin($screen-sm)
+      font-size: 14px
+      margin-bottom: 40px
+    a
+      color: #352929
+      opacity: 0.5
+      text-decoration: none
+      padding: 10px 10px
+      display: inline-block
+      +avenir()
+      +tr()
+      +rmin($screen-sm)
+        padding-left: 14px
+        padding-right: 14px
+      &:hover
+        opacity: 1
+/* end footer */
+
+

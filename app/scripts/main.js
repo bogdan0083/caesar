@@ -13,6 +13,8 @@ $(document).ready(function () {
   var $frontpageNav = $('.frontpage-nav');
   var $mouseIcon = $('.mouse');
   var hoverReadyClass = 'js-hover-ready';
+  var $anchors = $('[data-anchor]');
+  var $circleItems = $('.circle-item');
 
   // media breakpoints
   var screenXs = 460;
@@ -76,4 +78,20 @@ $(document).ready(function () {
     }, 1700)
   }
 
+  $anchors.click(function (e) {
+    e.preventDefault();
+    var $anchor = $(this);
+    var id = $anchor.attr('href');
+    $('body, html').animate({
+      'scrollTop': $(id).offset().top
+    });
+  });
+
+  $circleItems.hover(function (e) {
+    var width = $(this).width();
+    var height = $(this).height();
+    console.log(width);
+  }, function (e) {
+
+  });
 });

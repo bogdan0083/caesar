@@ -1,4 +1,19 @@
 //BEGIN footer
-footer.site-footer
-  p Hello from
+footer.footer#footer
+  .container
+    a.logo(href="" data-aos="fade-up" data-aos-duration="700" data-aos-anchor=".footer")
+      img(src="images/logo.png" alt="Sezar Group")
+    nav.footer-nav(data-aos="fade-up" data-aos-delay="400" data-aos-duration="700" data-aos-anchor=".footer")
+      a(href="#") О компании
+      a(href="#") Акции
+      a(href="#") Пресс-центр
+      a(href="#") Новости
+      a(href="#") Контакты
+    .socials(data-aos="fade-up" data-aos-delay="800" data-aos-duration="700" data-aos-anchor=".footer")
+      a.social-icon(href="#")
+        include ../data/facebook.svg
+      a.social-icon(href="#")
+        include ../data/twitter.svg
+      a.social-icon(href="#")
+        include ../data/vk.svg
 //END footer

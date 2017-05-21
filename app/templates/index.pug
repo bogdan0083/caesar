@@ -10,10 +10,10 @@ block content
   section.promo
     nav.frontpage-nav
       ul.reset-list
-        li: a.active(href="#promo" role="button"): span
-        li: a(href="#promo" role="button"): span
-        li: a(href="#promo" role="button"): span
-        li: a(href="#promo" role="button"): span
+        li: a.active(href="#promo" role="button" data-anchor): span
+        li: a(href="#about-us" role="button" data-anchor): span
+        li: a(href="#news-offers" role="button" data-anchor): span
+        li: a(href="#footer" role="button" data-anchor): span
     .promo-backgrounds.js-promo-backgrounds
       .promo-background.js-promo-background(style="background: url(../images/promo-bg2.jpg) no-repeat center / cover")
       .promo-background.js-promo-background(style="background: url(../images/promo-bg2.jpg) no-repeat center / cover")
@@ -71,7 +71,7 @@ block content
     .mouse
   // end promo
   // start about-us
-  section.about-us
+  section.about-us#about-us
     .container
       .circles-container
         .circles
@@ -113,7 +113,72 @@ block content
         .row
           .about-us-text(data-aos="fade-left" data-aos-anchor=".circles-container" data-aos-delay="1900" data-aos-duration="1000") Более 10 лет результативной работы принесли холдингу Sezar Group портфель знаковых объектов, безупречную репутацию, а также надежных партнеров
           .about-us-text(data-aos="fade-right" data-aos-anchor=".circles-container" data-aos-delay="2100" data-aos-duration="1000") Множество престижных наград, среди которых «Гарант качества и надежности» по итогам всероссийской премии «Национальная марка качества-2014»
-      a.btn(href="#")
+      a.btn(href="#" data-aos="fade-up" data-aos-anchor=".circles-container" data-aos-delay="2200" data-aos-duration="1000")
         span О компании
 
   // end about-us
+  // start news-offers
+  section.news-offers#news-offers
+    a.news-offers-block.special-offer-block.w-50.h-100.overlay-black.color-white(
+      href="#"
+      data-aos="fade-right"
+      data-aos-anchor=".news-offers"
+      data-aos-duration="700")
+      .background(style="background: url(images/news-offer1.jpg) no-repeat center / cover")
+      .dates.dates-block-offer
+        .date-block.date-block-offer
+          div.from с
+          div.digit 01
+          div.month окт
+        .separator
+        .date-block.date-block-offer
+          div.from по
+          div.digit 25
+          div.month окт
+      .inner
+        .news-offers-content
+          span.type Акция
+          span.text Выбирай себе соседей
+    a.news-offers-block.w-50.h-50.second.overlay-gold.color-white(href="#"
+      data-aos="fade-down"
+      data-aos-anchor=".news-offers"
+      data-aos-duration="700"
+      data-aos-delay="400")
+      .background(style="background: url(images/news-offer2.jpg) no-repeat center / cover")
+      .dates
+        .date-block
+          div.digit 18
+          div.month окт
+      .inner
+        .news-offers-content
+          .news-offers-text ЖК «Рассказово» стал лауреатом премии RREF Awards 2016
+          .news-offers-category Новости
+    a.news-offers-block.w-25.h-50.no-bg.color-black(href="#"
+      data-aos="fade-up"
+      data-aos-anchor=".news-offers"
+      data-aos-duration="700"
+      data-aos-delay="800")
+      .dates
+        .date-block
+          div.digit 18
+          div.month окт
+      .inner
+        .news-offers-content
+          .news-offers-text Ипотека в Банке Глобэкс теперь от 9,5%!
+          .news-offers-category Новости
+    a.news-offers-block.w-25.h-50.overlay-black.color-gold(href="#"
+      data-aos="fade-left"
+      data-aos-anchor=".news-offers"
+      data-aos-duration="700"
+      data-aos-delay="1200")
+      .background(style="background: url(images/news-offer3.jpg) no-repeat center / cover")
+      .dates
+        .date-block
+          div.digit 12
+          div.month окт
+      .inner
+        .news-offers-content
+          .news-offers-text В ЖК «Рассказово» проходят «Дни открытых дверей»
+          .news-offers-category Новости
+  // end news-offers
+
