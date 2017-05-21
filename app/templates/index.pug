@@ -75,24 +75,45 @@ block content
     .container
       .circles-container
         .circles
-          .circle-1
+          a.circle-item(style="bottom: 40px; left: 80px" data-aos="fade-in" data-aos-anchor=".circles-container" data-aos-delay="2000" data-aos-duration="1000")
+            .date 2012
             .circle-content
-              a.circle-item
-                include data/cup.svg
-                .circle-content
-                  img(src="" alt="")
-                .date 2014
+              include data/cup.svg
+              img(src="images/skype.png" alt="")
+          a.circle-item.brown-secondary(style="top: 110px; right: 68px" data-aos="fade-in" data-aos-anchor=".circles-container" data-aos-delay="2000" data-aos-duration="1000")
+            .circle-content
+              include data/cup.svg
+              img(src="images/skype.png" alt="")
+            .date 2014
+          a.circle-item.brown(style="top: 40px; right: 168px" data-aos="fade-in" data-aos-anchor=".circles-container" data-aos-delay="2000" data-aos-duration="1000")
+            .circle-content
+              include data/cup.svg
+              img(src="images/skype.png" alt="")
+            .date 2014
+          a.circle-item(style="bottom: 53px; left: 148px" data-aos="fade-in" data-aos-anchor=".circles-container" data-aos-delay="2000" data-aos-duration="1000")
+            .date 2014
+            .circle-content
+              include data/cup.svg
+              img(src="images/skype.png" alt="")
+          a.circle-item(style="bottom: 140px; left: 140px" data-aos="fade-in" data-aos-anchor=".circles-container" data-aos-delay="2000" data-aos-duration="1000")
+            .date 2015
+            .circle-content
+              include data/cup.svg
+              img(src="images/skype.png" alt="")
+          .circle.circle-1(data-aos="zoom-in1" data-aos-anchor=".circles-container" data-aos-delay="900" data-aos-duration="1000")
+          .circle.circle-2(data-aos="zoom-in1" data-aos-anchor=".circles-container" data-aos-delay="600" data-aos-duration="1000")
+          .circle.circle-3(data-aos="zoom-in1" data-aos-anchor=".circles-container" data-aos-delay="300" data-aos-duration="1000")
         .about-us-logo
-          .logo-circle
+          .logo-circle(data-aos="zoom-in1" data-aos-anchor=".circles-container" data-aos-duration="1000")
             img(src="images/logo-fs.png" alt="Sezar Group")
           .logo-text
-            span Sezar 
-            span Group
+            span(data-aos="fade-left" data-aos-anchor=".circles-container" data-aos-delay="1400" data-aos-duration="1000") Sezar
+            span(data-aos="fade-right" data-aos-anchor=".circles-container" data-aos-delay="1700" data-aos-duration="1000") Group
       .about-us-group-text
         .row
-          .about-us-text Более 10 лет результативной работы принесли холдингу Sezar Group портфель знаковых объектов, безупречную репутацию, а также надежных партнеров
-          .about-us-text Множество престижных наград, среди которых «Гарант качества и надежности» по итогам всероссийской премии «Национальная марка качества-2014»
-      a.btn
+          .about-us-text(data-aos="fade-left" data-aos-anchor=".circles-container" data-aos-delay="1900" data-aos-duration="1000") Более 10 лет результативной работы принесли холдингу Sezar Group портфель знаковых объектов, безупречную репутацию, а также надежных партнеров
+          .about-us-text(data-aos="fade-right" data-aos-anchor=".circles-container" data-aos-delay="2100" data-aos-duration="1000") Множество престижных наград, среди которых «Гарант качества и надежности» по итогам всероссийской премии «Национальная марка качества-2014»
+      a.btn(href="#")
         span О компании
 
   // end about-us

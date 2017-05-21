@@ -1,9 +1,7 @@
-.block
-  display: flex
 
-.block-asd
-  position: statics
-
+.out
+  overflow: hidden
+  position: relative
 /* start promo-main */
 .promo
   background-color: gray
@@ -270,10 +268,20 @@
   100%
     transform: translateZ(0) translateY(0)
 
+[data-aos="zoom-in1"]
+  transform: scale(0.1);
+  opacity: 0;
+  transition-property: transform, opacity;
+  &.aos-animate
+    transform: scale(1);
+    opacity: 1;
+
 /* start about-us */
 .about-us
   text-align: center
   padding: 40px 0
+  +rmin($screen-sm)
+    padding-top: 70px
   .circles-container
     position: relative
     display: inline-block
@@ -287,16 +295,26 @@
       height: 118px
       line-height: 118px
       position: absolute
-      width: 120%
+      width: 150%
       transform: translate(-50%, -50%)
       top: 50%
       left: 50%
-      margin-top: -59px
   .logo-circle
     +rmin($screen-sm)
       width: 118px
       height: 118px
-      border: 1px solid #967440
+      border: 2px solid rgba(#967440, 0.9)
+      border-radius: 50%
+      position: relative
+      display: block
+      margin: 0 auto
+      img
+        position: absolute
+        margin: auto
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
   .logo-text
     font-size: 30px
     text-transform: uppercase
@@ -307,15 +325,37 @@
       font-size: 36px
     +rmin($screen-sm)
       display: inline-block
+      font-size: 36px
+      letter-spacing: 22px
+      position: relative
+      top: -120px
+      left: 18px
+      span
+        display: inline-block
+        &:before
+          content: ''
+          position: absolute
+          height: 1px
+          width: 2000px
+          right: 109%
+          background-color: #d0bda0
+          top: 50%
+        &:first-child
+          margin-right: 210px
+        &:last-child:before
+          right: auto
+          left: 105%
   &-group-text
     font-size: 17px
     max-width: 900px
-    margin: 20px auto
+    margin: 20px auto 
     .row
       +clr()
       +rmin($screen-sm)
         margin-left: -45px
         margin-right: -45px
+        margin-top: 40px
+        margin-bottom: 40px
   &-text
     margin: 20px 0
     line-height: 1.6
@@ -324,12 +364,119 @@
       padding-left: 45px
       padding-right: 45px
       width: 50%
+  .circle-item
+    display: block
+    position: absolute
+    transform: translateZ(0)
+    z-index: 10
+    &.brown
+      border-color: #c0a37d
+      svg path
+        fill: #a08253
+    &.brown-secondary
+      .circle-content
+        background-color: #bea17a
+        width: 38px
+        height: 38px
+        svg path
+          fill: white
+      &:hover
+        .circle-content
+          background-color: #fff
+    &:hover
+      z-index: 10
+      .circle-content
+        width: 100px
+        height: 100px
+        z-index: 10
+        transform: translateZ(0) scale(1.4)
+        img
+          transition-delay: 0.3s
+          opacity: 1
+        svg
+          opacity: 0
+  .date
+    font-size: 12px
+    color: #7c7c7c
+    margin: 2px
+  .circle-content
+    width: 38px
+    height: 38px
+    border: 1px solid #e3e3e3
+    position: relative
+    transform-origin: 50%
+    border-radius: 50%
+    transition: all 0.3s
+    background-color: white
+    z-index: 10
+    svg, img
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      margin: auto
+      transition: opacity 0.2s
+    img
+      max-width: 80%
+      max-height: 80%
+      opacity: 0
   .circle-1
     height: 540px
     width: 540px
     margin: auto
     border: 1px solid #dfdfdf
     border-radius: 50%
+  .circle-2
+    height: 460px
+    width: 460px
+    margin: auto
+    border: 1px solid #e9e9e9
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-left: -230px
+    margin-top: -230px
+    border-radius: 50%
+  .circle-3
+    height: 316px
+    width: 316px
+    margin: auto
+    border: 1px solid #e0e0e0
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-left: -158px
+    margin-top: -158px
+    border-radius: 50%
 /* end about-us */
 
-
+.btn
+  text-decoration: none
+  display: inline-block
+  min-width: 214px
+  text-align: center
+  border-radius: 30px
+  border: 1px solid #d8d8d8
+  height: 47px
+  line-height: 44px
+  position: relative
+  overflow: hidden
+  +tr()
+  span
+    position: relative
+  &:hover
+    color: white
+    border-color: $color-gold
+    &:before
+      transform: none
+  &:before
+    content: ''
+    height: 100%
+    top: 0
+    left: 0
+    background-color: $color-gold
+    position: absolute
+    width: 100%
+    transform: translateY(-102%)
+    +tr()
