@@ -204,4 +204,174 @@ img
         opacity: 1
 /* end footer */
 
+/* start icons */
+.icon-about, .icon-apartment
+  display: inline-block
+  vertical-align: middle
+  position: relative
+  &:before, &:after
+    content: ''
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    position: absolute
+    +tr()
+  &:after
+    opacity: 0
+  &:hover
+    &:before
+      opacity: 0
+    &:after
+      opacity: 1px
 
+.icon-about
+  width: 46px
+  height: 48px
+  &:before
+    background-image: url(../images/about-project-ic1-active.png)
+  &:after
+    background-image: url(../images/about-project-ic1-active.png)
+
+.icon-apartment
+  width: 40px
+  height: 47px
+  &:before
+    background-image: url(../images/about-project-ic2.png)
+  &:after
+    background-image: url(../images/about-project-ic2-active.png)
+/* end icons */
+
+
+/* start tabs */
+.tabs
+  +clr()
+
+.tab-pane
+  text-align: center
+  float: left
+  width: 50%
+  padding: 60px 0
+  font-size: 20px
+  text-transform: uppercase
+  text-decoration: none
+  color: #987641
+  border-bottom: 1px solid #e1e1e1
+  position: relative
+  +avenir()
+  +tr()
+  &:before, &:after
+    content: ''
+    position: absolute
+    +arr(24, 6, #7f7f7f, b)
+    bottom: -6px
+    left: 50%
+    margin-left: -12px
+    opacity: 0
+    +tr(opacity, 0.3s)
+  &:after
+    z-index: 1
+    bottom: -5px
+    +arr(20, 5, #ffffff, b)
+    margin-left: -10px
+  &:first-child
+    border-right: 1px solid #e1e1e1
+  &.js-active, 
+  &:hover
+    color: #484848
+    border-bottom-color: #7f7f7f
+    .icon
+      &:before
+        opacity: 0
+      &:after
+        opacity: 1
+  &.js-active
+    &:before, &:after
+      opacity: 1
+  +rmin($screen-sm)
+    letter-spacing: 6px
+    line-height: 0
+    font-size: 30px
+    height: 270px
+    padding-top: 100px
+    padding-bottom: 0
+/* end tabs */
+
+/* start section-heading */
+.section-heading
+  font-size: 24px
+  text-align: center
+  color: #484848
+  padding-top: 0
+  text-transform: uppercase
+  letter-spacing: 4px
+  +avenir()
+  +rmin($screen-sm)
+    font-size: 40px
+/* end section-heading */
+
+/* start object-distance */
+.object-distance
+  background-color: #f9f9f9
+  padding: 30px 0
+  +rmin($screen-sm)
+    padding: 50px 0
+
+.distance-item
+  margin: 30px 0
+  text-align: center
+  display: inline-block
+  width: 100%
+  position: relative
+  +rmin($screen-xs)
+    display: inline-block
+    width: 48%
+  +rmin($screen-sm)
+    padding-left: 10px
+    padding-right: 10px
+    width: 24%
+  +rmin($screen-sm)
+    &:before
+      content: ''
+      position: absolute
+      top: 50%
+      right: 0
+      width: 1px
+      height: 228px
+      margin-top: -114px
+      background-color: #d7d7d7
+    &:last-child:before
+      display: none
+  .circle
+    width: 160px
+    height: 160px
+    border-radius: 50%
+    text-align: center
+    position: relative
+    background: url(../images/circles.png) no-repeat center
+    padding-top: 38px
+    margin: 0 auto
+  .num
+    font-size: 48px
+    +avenir()
+  .num, .text
+    color: #987641
+    line-height: 1.2
+  .caption
+    font-size: 15px
+    text-transform: uppercase
+    letter-spacing: 3px
+    margin-top: 30px
+/* end object-distance */
+
+.object-location
+  height: 400px
+  position: relative
+  .google-map
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+  +rmin($screen-sm)
+    height: 520px

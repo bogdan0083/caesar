@@ -1,0 +1,247 @@
+//- title: Index Page
+extends layouts/_layout
+block head
+  - var title = 'Main page'
+  - var headerInner = true
+  - var active = 0
+
+block content
+  // start promo-object
+  section.promo-object(style="background: url(images/object1.jpg) no-repeat center / cover")
+    nav.objects-nav
+      ul.reset-list
+        li
+          a.active(href="#") ЖК Династия
+        li
+          a(href="#") К Рассказово
+        li
+          a(href="#") Николин парк
+    .container
+      a.object-logo
+        img(src="images/dynasty-logo.png")
+      h1.promo-heading
+        span.promo-heading-top(data-aos="fade-up" data-aos-anchor=".promo" data-aos-duration="700") Проверенные временем каноны
+        span.promo-heading-bottom(data-aos="fade-up" data-aos-anchor=".promo" data-aos-duration="700" data-aos-delay="400") классической архитектуры
+      a.btn.btn-spacing.btn-transparent.btn-long(href="#")
+        span www.sz-dinasty.ru
+    .like
+  // end promo-object
+  // start object-data
+  section.object-data
+    .tabs.js-tabs(data-slider=".about-object-slider")
+      a.tab-pane.js-tab-pane.js-active(href="#")
+        .inner
+          .icon-wrap
+            i.icon.icon-about(aria-hidden="true")
+          h3 О проекте
+      a.tab-pane.js-tab-pane(href="#")
+        .inner
+          .icon-wrap
+            i.icon.icon-apartment(aria-hidden="true")
+          h3 Квартиры
+    .about-object-slider
+      .slide
+        .about-object-item(data-aos="fade-right" data-aos-anchor=".about-object-slider" data-aos-duration="500" data-aos-delay="0")
+          .icon-wrap
+            img(src="images/about-project-ic3.png" alt="Этажность корпусов")
+          .num 22—24
+          .text Этажность корпусов
+        .about-object-item(data-aos="fade-right" data-aos-anchor=".about-object-slider" data-aos-duration="500" data-aos-delay="300")
+          .icon-wrap
+            img(src="images/about-project-ic4.png" alt="Этажность корпусов")
+          .num до 80
+          .text терассы (м2)
+        .about-object-item(data-aos="fade-right" data-aos-anchor=".about-object-slider" data-aos-duration="500" data-aos-delay="600")
+          .icon-wrap
+            img(src="images/about-project-ic5.png" alt="Этажность корпусов")
+          .num до 40
+          .text потолки (м)
+        .about-object-item(data-aos="fade-right" data-aos-anchor=".about-object-slider" data-aos-duration="500" data-aos-delay="900")
+          .icon-wrap
+            img(src="images/about-project-ic6.png" alt="Этажность корпусов")
+          .num до 11.2
+          .text лоджии (м2)
+        .about-object-item(data-aos="fade-right" data-aos-anchor=".about-object-slider" data-aos-duration="500" data-aos-delay="1200")
+          .icon-wrap
+            img(src="images/about-project-ic7.png" alt="Этажность корпусов")
+          .num до 2.9
+          .text высота окон (м)
+      .slide.slide-hidden
+        .about-object-item(data-aos="fade-left" data-aos-anchor=".about-object-slider" data-aos-duration="500" data-aos-delay="0")
+          .icon
+            img(src="images/about-project-ic3.png" alt="Этажность корпусов")
+          .num 22—24
+          .text Этажность корпусов
+        .about-object-item(data-aos="fade-left" data-aos-anchor=".about-object-slider" data-aos-duration="500" data-aos-delay="300")
+          .icon
+            img(src="images/about-project-ic4.png" alt="Этажность корпусов")
+          .num до 80
+          .text терассы (м2)
+        .about-object-item(data-aos="fade-left" data-aos-anchor=".about-object-slider" data-aos-duration="500" data-aos-delay="600")
+          .icon
+            img(src="images/about-project-ic5.png" alt="Этажность корпусов")
+          .num до 40
+          .text потолки (м)
+        .about-object-item(data-aos="fade-left" data-aos-anchor=".about-object-slider" data-aos-duration="500" data-aos-delay="900")
+          .icon
+            img(src="images/about-project-ic6.png" alt="Этажность корпусов")
+          .num до 11.2
+          .text лоджии (м2)
+        .about-object-item(data-aos="fade-left" data-aos-anchor=".about-object-slider" data-aos-duration="500" data-aos-delay="1200")
+          .icon
+            img(src="images/about-project-ic7.png" alt="Этажность корпусов")
+          .num до 2.9
+          .text высота окон (м)
+  // end object-data
+
+  // start object-location-info
+  .object-location-info
+    h4 Хорошевское ш., владение 25
+    p посмотреть на карте
+    a.to-location-link(href="#")
+      include data/arr-down.svg
+  // end object-location-info
+
+  // start object-description
+  .object-description
+    .object-description-group
+      .container
+        .row
+          .col-xs-12.col-sm-6.col-md-6.col-lg-6
+            p.object-description-text Жилой комплекс «Династия» — новый знаковый архитектурный проект холдинга Sezar Group, реализуемый в примыкающем к центру Хорошевском районе Москвы. В основе концепции — выдержанные критерии бизнес-класса: авторский архитектурный проект, просторный приватный внутренний двор, высококачественные инженерные системы, строительные и отделочные материалы, продуманные планировки.
+          .col-xs-12.col-sm-6.col-md-6.col-lg-6
+            p.object-description-text Архитектура жилого комплекса «Династия» — тонко переосмысленная тема монументальной классики с выверенной чистотой линий и органичной комбинацией элементов ампира, эклектики и ар-деко. Комплекс объединяет три дома 21-24 этажей. Благодаря оригинальной форме обеспечен полностью закрытый от городской суеты просторный двор и перспективные видовые характеристики из окон.
+      a.btn.btn-spacing.btn-long.popup-link(href="#popup-order")
+        span Оставить заявку
+  // end object-description
+
+  // start object-gallery
+  .object-gallery
+    h2.section-heading Галерея
+    .gallery-slider
+      .wrapper
+        .slide
+          img(src="images/gallery1.jpg" alt="")
+        .slide
+          img(src="images/gallery2.jpg" alt="")
+        .slide
+          img(src="images/gallery1.jpg" alt="")
+      button.arr.arr-left
+        include data/arr-left.svg
+      button.arr.arr-right
+        include data/arr-right.svg
+  // end object-gallery
+
+  // start object-distance
+  section.object-distance
+    .container
+      h2.section-heading(data-aos="fade-down" data-aos-anchor=".object-distance") Расположение
+      .distance-item
+        .circle(data-aos="fade-up" data-aos-delay="0" data-aos-anchor=".object-distance" data-aos-duration="800")
+          .num(data-from="100" data-to="6") 6
+          .text км
+        .caption(data-aos="fade-up" data-aos-delay="0" data-aos-anchor=".object-distance" data-aos-duration="800") кремль
+      .distance-item
+        .circle(data-aos="fade-up" data-aos-delay="300" data-aos-anchor=".object-distance" data-aos-duration="800")
+          .num(data-from="100.1" data-to="4.2") 6
+          .text км
+        .caption(data-aos="fade-up" data-aos-delay="400" data-aos-anchor=".object-distance" data-aos-duration="800") Садовое кольцо
+      .distance-item
+        .circle(data-aos="fade-up" data-aos-delay="600" data-aos-anchor=".object-distance" data-aos-duration="800")
+          .num(data-from="100.1" data-to="0.3") 6
+          .text км
+        .caption(data-aos="fade-up" data-aos-delay="700" data-aos-anchor=".object-distance" data-aos-duration="800") м. полежаевская
+      .distance-item
+        .circle(data-aos="fade-up" data-aos-delay="900" data-aos-anchor=".object-distance" data-aos-duration="800")
+          .num(data-from="100" data-to="3") 6
+          .text км
+        .caption(data-aos="fade-up" data-aos-delay="1000" data-aos-anchor=".object-distance" data-aos-duration="800") москва-сити
+  // end object-distance
+
+  // start object-description
+  .object-description
+    .object-description-group
+      .container
+        .row
+          .col-xs-12.col-sm-6.col-md-6.col-lg-6
+            p.object-description-text Все квартиры — свободной планировки и возможностью комбинировать любое количество комнат, создав индивидуальное решение. Ряд квартир — с просторными открытыми террасами до 80 кв.м., на которых покупатель может реализовать любое креативное решение: зеленый сад, тренажерный зал, игровую для детей. К услугам жителей — двухуровневый подземный паркинг на 1200 машиномест.
+          .col-xs-12.col-sm-6.col-md-6.col-lg-6
+            p.object-description-text В числе эксклюзивных предложений жилого комплекса «Династия» — великолепные видовые квартиры с романским окном-розой, из которых, как на ладони, открывается панорама излучины Москва-реки и Москва-Сити. Этот яркий акцент фасада, визитная карточка жилого комплекса. Исключительность положения владельца продемонстрирует всего одна фраза: «Я живу здесь».
+  // end object-description
+
+  // start object-features
+  section.object-features
+    h2.section-heading Преимущества
+    .object-features-slider
+      .arrows
+        button.arr.arr-left
+          include data/arr-left.svg
+        button.arr.arr-right
+          include data/arr-right.svg
+      .wrapper
+        .slide
+          .feature-item
+            .image
+              img(src="images/feature1.jpg" alt="")
+            .slide-desc Все квартиры — свободной планировки
+        .slide
+          .feature-item
+            .image
+              img(src="images/feature1.jpg" alt="")
+            .slide-desc Все квартиры — свободной планировки #[br] Две строки!
+        .slide
+          .feature-item
+            .image
+              img(src="images/feature1.jpg" alt="")
+            .slide-desc Все квартиры — свободной планировки
+        .slide
+          .feature-item
+            .image
+              img(src="images/feature1.jpg" alt="")
+            .slide-desc Все квартиры — свободной планировки
+        .slide
+          .feature-item
+            .image
+              img(src="images/feature1.jpg" alt="")
+            .slide-desc Все квартиры — свободной планировки
+        .slide
+          .feature-item
+            .image
+              img(src="images/feature1.jpg" alt="")
+            .slide-desc Все квартиры — свободной планировки
+        .slide
+          .feature-item
+            .image
+              img(src="images/feature1.jpg" alt="")
+            .slide-desc Все квартиры — свободной планировки
+        .slide
+          .feature-item
+            .image
+              img(src="images/feature1.jpg" alt="")
+            .slide-desc Все квартиры — свободной планировки
+        .slide
+          .feature-item
+            .image
+              img(src="images/feature1.jpg" alt="")
+            .slide-desc Все квартиры — свободной планировки
+        .slide
+          .feature-item
+            .image
+              img(src="images/feature1.jpg" alt="")
+            .slide-desc Все квартиры — свободной планировки
+      .slider-pagination
+        .inner
+          span.from 1
+          span.to 10
+  // end object-features
+
+  // start object-location
+  .object-location
+    .google-map
+    .inner
+      .marker-trigger.js-marker-trigger
+      h4 Хорошевское ш.,25
+  .object-end
+   a.btn.popup-link(href="popup-order")
+      span Оставить заявку
+  // end object-location

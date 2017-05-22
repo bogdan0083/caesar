@@ -457,13 +457,24 @@
   display: inline-block
   min-width: 214px
   text-align: center
-  border-radius: 30px
   border: 1px solid #d8d8d8
   height: 47px
   line-height: 44px
   position: relative
   overflow: hidden
+  font-size: 14px
   +tr()
+  &-round
+    border-radius: 30px
+  &-spacing
+    letter-spacing: 4px
+    text-transform: uppercase
+  &-long
+    min-width: 300px
+    height: 52px
+    line-height: 50px
+  &-transparent
+    border-color: rgba(white, 0.3)
   span
     position: relative
   &:hover
@@ -694,5 +705,386 @@
   .month
     font-size: 15px
     line-height: 1
-
 /* end date-block */
+
+/* start promo-object */
+.promo-object
+  position: relative
+  text-align: center
+  color: white
+  padding-bottom: 120px
+  .container
+    position: relative
+    height: 100%
+  &:before
+    content: ''
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    position: absolute
+    background-color: rgba(black, 0.7)
+  .object-logo
+    margin-bottom: 20px
+    display: inline-block
+  .promo-heading
+    margin-bottom: 30px
+    +rmin($screen-sm)
+      margin-bottom: 60px
+  .like
+    width: 106px
+    height: 106px
+    border-radius: 50%
+    border: 1px solid #e5e5e5
+    background-color: #fff
+    left: 50%
+    margin-left: -54px
+    position: absolute
+    bottom: -50px
+    z-index: 3
+    background: white url(../images/heart.png) no-repeat center
+  +rmin($screen-sm)
+    padding-bottom: 160px
+    background-attachment: fixed
+/* end promo-object */
+
+/* start objects-nav */
+.objects-nav
+  text-align: center
+  border-bottom: 1px solid #8c8987 
+  position: relative
+  z-index: 1
+  margin-bottom: 70px
+  +rmin($screen-sm)
+    margin-bottom: 130px
+  li
+    display: inline-block
+  a
+    display: inline-block
+    line-height: 60px
+    height: 60px
+    position: relative
+    padding: 0 8px
+    text-decoration: none
+    color: #dddddd
+    font-size: 15px
+    +rmin($screen-sm)
+      padding-left: 50px
+      padding-right: 50px
+    &.active
+      color: #fff
+      &:before
+        content: ''
+        left: 0
+        bottom: -1px
+        width: 100%
+        height: 1px
+        background-color: #fff
+        position: absolute  
+/* end objects-nav */
+
+/* start about-object-slider */
+.about-object
+  &-slider
+    text-align: center
+    padding: 20px 0
+    text-align: center
+    img
+      display: inline-block
+    .slide
+      overflow: hidden
+    +rmin($screen-sm)
+      padding: 40px 0
+  &-item
+    margin: 30px 0
+    vertical-align: top
+    display: inline-block
+    width: 49%
+    position: relative
+    .icon-wrap
+      position: relative
+      height: 50px
+      img
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        margin: auto
+    .num
+      color: #987641
+      font-size: 40px
+      margin-bottom: 14px
+      margin-top: 20px
+      +avenir()
+    .text
+      font-weight: 300
+      text-transform: uppercase
+      font-size: 15px
+      letter-spacing: 3px
+      max-width: 100px
+      margin: 0 auto
+    +rmin($screen-sm)
+      width: 20%
+      margin-right: -4px
+    +rmin(1000px)
+      width: auto
+      margin: 30px 80px
+      &:after
+        content: ''
+        top: 102px
+        right: -145px
+        width: 85px
+        height: 1px
+        position: absolute
+        background-color: #d8d8d8
+      &:last-child:after
+        display: none
+    +rmin($screen-md)
+      margin-left: 100px
+      margin-right: 100px
+/* end about-object-slider */
+
+/* start object-location-info */
+.object-location-info
+  text-align: center
+  padding: 50px 0 40px
+  background-color: #f5f5f5
+  position: relative
+  h4
+    font-size: 18px
+    color: #383838
+    font-weight: 400
+    text-transform: uppercase
+    letter-spacing: 2px
+    margin-bottom: 0
+    margin-top: 0
+  p 
+    margin-top: 0
+    color: #383838
+    font-size: 15px
+    margin-bottom: 0
+    opacity: .6
+  .to-location-link
+    border: 1px solid #e5e5e5
+    background-color: #f5f5f5
+    border-radius: 50%
+    position: absolute
+    width: 56px
+    height: 56px
+    bottom: -28px
+    left: 50%
+    margin-left: -28px
+    +tr()
+    svg
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+      margin: auto
+      path
+        +tr()
+    &:hover
+      border-color: white
+      background-color: $color-gold
+      svg path
+        fill: white
+    
+/* end object-location-info */
+
+/* start object-description */
+.object-description
+  text-align: center
+  line-height: 1.6
+  padding: 50px 0
+  .container
+    max-width: 1165px
+    margin: 0 auto
+  &-text
+    +rmin($screen-sm)
+      text-align: left
+  .btn
+    margin-top: 30px
+    +rmin($screen-sm)
+      margin-top: 60px
+  +rmin($screen-md)
+    .row
+      margin-left: -34px
+      margin-right: -38px
+      > div
+        padding-left: 38px
+        padding-right: 38px
+/* end object-description */
+
+/* start gallery-slider */
+.gallery-slider
+  position: relative
+  text-align: center
+  +rmin($screen-sm)
+    margin-top: 50px
+  img
+    width: 100%
+    max-width: auto
+  .arr
+    position: absolute
+    border-radius: 50%
+    left: 10px
+    top: 50%
+    border: 2px solid white
+    border-radius: 50%
+    width: 50px
+    height: 50px
+    margin-top: -25px
+    background: transparent
+    padding: 0
+    cursor: pointer
+    &:focus
+      outline: none
+    +tr()
+    svg
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      margin: auto
+      max-width: 50%
+      max-height: 50%
+      path
+        +tr()
+      +rmin($screen-sm)
+        max-width: 50%
+        max-height: 50%
+    &:hover
+      border-color: white
+      background-color: #fff
+      svg path
+        fill: $color-text
+    &-right
+      left: auto
+      right: 10px
+    +rmin($screen-sm)
+      width: 94px
+      height: 94px
+      margin-top: -47px
+      left: 80px
+      &.arr-right
+        left: auto
+        right: 80px
+/* end gallery-slider */
+
+/* start object-features */
+.object-features
+  text-align: center
+  position: relative
+  .image
+    width: 254px
+    height: 254px
+    margin: 0 auto
+    transform: translateZ(0) scale(0.5)
+    background-color: #fff
+    z-index: 1
+    position: relative
+    img
+      opacity: .5
+      +tr()
+    +tr()
+  .slick-center
+    .image
+      transform: none
+      img
+        opacity: 1
+  img
+    display: inline-block
+  &-slider
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      top: 128px
+      left: 0
+      width: 100%
+      height: 1px
+      background: #d8d8d8
+  .arrows
+    position: absolute
+    width: 310px
+    margin-left: -155px
+    left: 50%
+    top: 100px
+    z-index: 10
+    height: 60px
+  .slide-desc
+    padding-top: 120px
+    font-size: 21px
+    color: #3a3a3a
+    transition: all 0.1s
+    opacity: 0
+    transform: translateY(20px)
+    +rmin($screen-sm)
+      padding-top: 130px
+      margin-left: -100px
+      margin-right: -100px
+  .slick-center
+    .slide-desc
+      opacity: 1
+      transform: none
+  .arr
+    position: absolute
+    border-radius: 50%
+    left: 0
+    top: 0
+    border: 1px solid #e5e5e5
+    border-radius: 50%
+    width: 50px
+    height: 50px
+    background: white
+    padding: 0
+    cursor: pointer
+    &:focus
+      outline: none
+    +tr()
+    svg
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      margin: auto
+      max-width: 50%
+      max-height: 50%
+      path
+        fill: #686868
+        +tr()
+    &-right
+      left: auto
+      right: 0
+  .slider-pagination
+    position: absolute
+    width: 100%
+    top: 290px
+    left: 0
+    text-align: center
+    font-size: 30px
+    color: #8f6a32
+    +rmin($screen-sm)
+      bottom: 52px
+    .inner
+      width: 124px
+      margin: 0 auto
+      border-bottom: 1px solid #eaeaea
+      padding-bottom: 10px
+      +rmin($screen-sm)
+        padding-bottom: 20px
+    +avenir()
+    .from
+      display: inline-block
+      &:after
+        content: '/'
+        display: inline-block
+        margin-left: 9px
+        margin-right: 9px
+    
+
+/* end object-features */

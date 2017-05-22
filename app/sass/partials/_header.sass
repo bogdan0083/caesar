@@ -12,6 +12,9 @@
       left: 50%
       bottom: -7px
       background: url(../images/triangle.png) no-repeat center
+    &.header-inner
+      &:after
+        display: none
   .logo
     display: inline-block
     +rmin($screen-sm)
@@ -40,14 +43,14 @@
         left: auto
         right: 0
     +r($screen-sm)
-      width: 33px
-      height: 39px
+      width: 167px
+      height: 35px
       overflow: hidden
       display: inline-block
-      background: url(../images/logo-fs.png) no-repeat center / 100% 100%
+      background: url(../images/logo-inner.png) no-repeat center / 100% 100%
       position: absolute
       left: 15px
-      top: 10px
+      top: 12px
       &-inner
         display: none
   &-topline
@@ -138,6 +141,39 @@
     +rmin($screen-sm)
       display: inline-block
 
+.header.header-inner
+  .logo-small
+    position: absolute
+    left: 15px
+    top: 12px
+  .header-middle
+    padding-top: 0
+    padding-bottom: 0
+  .main-nav
+    a
+      padding-top: 0
+      padding-bottom: 0
+      height: 69px
+      line-height: 68px
+      +rmin($screen-sm)
+        padding-left: 4px
+        padding-right: 4px
+      +rmin($screen-md)
+        padding-left: 20px
+        padding-right: 20px
+      &.link-large
+        text-transform: uppercase
+        padding-left: 10px
+        padding-right: 10px
+        font-size: 14px
+        +rmin($screen-md)
+          padding-left: 20px
+          padding-right: 20px
+        +rmin($screen-lg)
+          padding-left: 40px
+          padding-right: 40px
+        +avenir()
+
 .main-nav
   display: none
   text-align: center
@@ -146,13 +182,28 @@
   a
     color: #171717
     transition: all 0.3s
-    opacity: .6
+    color: #666565
     text-decoration: none
     font-size: 16px
     padding: 10px 20px 16px
     display: inline-block
+    &.link-large
+      color: #1a1a1a
+      +rmin($screen-md)
+        display: inline-block
+    &.active
+      position: relative
+      &:before
+        content: ''
+        bottom: 0
+        left: 0
+        height: 2px
+        width: 100%
+        position: absolute
+        background-color: #99805c
     &:hover
       opacity: 1
+      color: $color-gold
   +rmin($screen-sm)
     display: block
 

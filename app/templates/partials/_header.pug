@@ -1,7 +1,10 @@
 //BEGIN header
-header.header
+header.header(class=headerInner ? 'header-inner' : '')
   .header-topline
     .container
+      if (headerInner)
+        a.logo-small(href="#")
+          img(src="images/logo-inner.png")
       a.callback.popup-link(href="#popup-callback")
         include ../data/phone.svg
         span Заказать звонок
@@ -17,10 +20,11 @@ header.header
   .header-middle
     .container
       .wrapper
-        a.header-link(href="#") Жилая недвижимость
-        a.logo(href="#")
-          .logo-inner
-            img.logo-img(src="images/logo.png" alt="Sezar group")
-        a.header-link(href="#") Коммерческая недвижимость
+        if (!headerInner)
+          a.header-link(href="#") Жилая недвижимость
+          a.logo(href="#")
+            .logo-inner
+              img.logo-img(src="images/logo.png" alt="Sezar group")
+          a.header-link(href="#") Коммерческая недвижимость
       include _links.pug
 //END header

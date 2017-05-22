@@ -2,5 +2,9 @@
 
 nav.main-nav
   ul.reset-list
+    if (headerInner)
+      li: a.link-large(href="#" class=active == 0 ? "active" : "") Жилая недвижимость
     for link, idx in links
-      li: a(href="#") #{link}
+      li: a(href="#" class=active == (idx + 1) ? "active" : "") #{link}
+    if (headerInner)
+      li: a.link-large(href="#" class=active == 6 ? "active" : "") Коммерческая недвижимость
