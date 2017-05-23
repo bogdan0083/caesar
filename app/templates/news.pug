@@ -1,0 +1,91 @@
+//- title: Index Page
+extends layouts/_layout
+block head
+  - var title = 'Main page'
+  - var headerInner = true
+  - var active = 4
+
+block content
+  // start news-page
+  .news-page
+    section.news
+      // start news-item-promo
+      .news-item-promo(style="background-image: url(../images/news3.jpg)")
+        .container
+          a(href="#")
+            .square(data-aos="" data-aos-anchor=".news-item-promo")
+              .top
+              .bottom
+            .date
+              .num 18
+              .month окт
+            h1.title.section-heading(data-aos="fade-in" data-aos-duration="1000" data-aos-delay="800" data-aos-anchor=".news-item-promo") ЖК «Рассказово» стал лауреатом премии RREF Awards 2016
+            .category Новости
+      // end news-item-promo
+      .news-group
+        // start news-item
+        a.news-item(href="#")
+          .news-image(href="#" data-aos="fade-left-big" data-aos-duration="1000")
+            .background(style="background-image: url(../images/news1.jpg)")
+          .news-info(data-aos="fade-right-big" data-aos-duration="1000")
+            .inner
+              .news-info-content
+                .date
+                  .num 18
+                  .month окт
+                .news-info-name Ипотека в Банке Глобэкс теперь от 9,5%!
+                p.news-info-more Узнать больше
+        // end news-item
+        // start news-item
+        a.news-item(href="#")
+          .news-image(href="#" data-aos="fade-right-big" data-aos-duration="1000")
+            .background(style="background-image: url(../images/news2.jpg)")
+          .news-info(data-aos="fade-left-big" data-aos-duration="1000")
+            .inner
+              .news-info-content
+                .date
+                  .num 18
+                  .month окт
+                .news-info-name В жилом комплексе «Рассказово» открыты продажи квартир в новом доме
+                p.news-info-more Узнать больше
+        // end news-item
+    .news-item-full(style="background-image: url(../images/news4.jpg)")
+      .container
+        a(href="#")
+          .date(data-aos="fade-up" data-aos-duration="800")
+            .num 23
+            .month сен
+          h2.title.section-heading(data-aos="fade-up" data-aos-duration="800" data-aos-delay="400" data-aos-anchor=".news-item-full") В ЖК «Рассказово» #[br] проходят «Дни открытых дверей»
+          span.read-more(data-aos="fade-up" data-aos-duration="800" data-aos-delay="800" data-aos-anchor=".news-item-full") Узнать больше
+    .news-group
+      // start news-item
+      a.news-item(href="#")
+        .news-image(href="#" data-aos="fade-left-big" data-aos-duration="1000")
+          .background(style="background-image: url(../images/news1.jpg)")
+        .news-info(data-aos="fade-right-big" data-aos-duration="1000")
+          .inner
+            .news-info-content
+              .date
+                .num 18
+                .month окт
+              .news-info-name Ипотека в Банке Глобэкс теперь от 9,5%!
+              p.news-info-more Узнать больше
+      // end news-item
+      // start news-item
+      a.news-item(href="#")
+        .news-image(href="#" data-aos="fade-right-big" data-aos-duration="1000")
+          .background(style="background-image: url(../images/news2.jpg)")
+        .news-info(data-aos="fade-left-big" data-aos-duration="1000")
+          .inner
+            .news-info-content
+              .date
+                .num 18
+                .month окт
+              .news-info-name В жилом комплексе «Рассказово» открыты продажи квартир в новом доме
+              p.news-info-more Узнать больше
+      // end news-item
+    a.news-more(href="#")
+      .circle(data-aos="")
+        include data/plus.svg
+      span(data-aos="fade-up" data-aos-delay="200") Еще новости
+  // end news
