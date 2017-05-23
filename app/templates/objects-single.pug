@@ -8,7 +8,7 @@ block head
 block content
   // start promo-object
   section.promo-object(style="background: url(images/object1.jpg) no-repeat center / cover")
-    nav.objects-nav
+    nav.objects-nav(data-aos="fade-in" data-aos-duration="1200")
       ul.reset-list
         li
           a.active(href="#") ЖК Династия
@@ -17,24 +17,24 @@ block content
         li
           a(href="#") Николин парк
     .container
-      a.object-logo
+      a.object-logo(data-aos="fade-in" data-aos-duration="1200" data-aos-anchor=".promo-object")
         img(src="images/dynasty-logo.png")
       h1.promo-heading
-        span.promo-heading-top(data-aos="fade-up" data-aos-anchor=".promo" data-aos-duration="700") Проверенные временем каноны
-        span.promo-heading-bottom(data-aos="fade-up" data-aos-anchor=".promo" data-aos-duration="700" data-aos-delay="400") классической архитектуры
-      a.btn.btn-spacing.btn-transparent.btn-long(href="#")
+        span.promo-heading-top(data-aos="fade-up" data-aos-anchor=".promo-object" data-aos-duration="1000" data-aos-delay="400") Проверенные временем каноны
+        span.promo-heading-bottom(data-aos="fade-up" data-aos-anchor=".promo-object" data-aos-duration="1000" data-aos-delay="800") классической архитектуры
+      a.btn.btn-spacing.btn-transparent.btn-long(href="#" data-aos="fade-up" data-aos-anchor=".promo-object" data-aos-duration="1000" data-aos-delay="1200")
         span www.sz-dinasty.ru
-    .like
+    .like(data-aos="fade-in" data-aos-anchor=".promo-object" data-aos-duration="600" data-aos-delay="1800")
   // end promo-object
   // start object-data
   section.object-data
-    .tabs.js-tabs(data-slider=".about-object-slider")
-      a.tab-pane.js-tab-pane.js-active(href="#")
+    .tabs.js-tabs(data-slider=".about-object-slider" )
+      a.tab-pane.js-tab-pane.js-active(href="#" data-aos="fade-right" data-aos-duration="1000")
         .inner
           .icon-wrap
             i.icon.icon-about(aria-hidden="true")
           h3 О проекте
-      a.tab-pane.js-tab-pane(href="#")
+      a.tab-pane.js-tab-pane(href="#" data-aos="fade-left" data-aos-duration="1000")
         .inner
           .icon-wrap
             i.icon.icon-apartment(aria-hidden="true")
@@ -95,10 +95,10 @@ block content
   // end object-data
 
   // start object-location-info
-  .object-location-info
+  .object-location-info(data-aos="fade-in")
     h4 Хорошевское ш., владение 25
     p посмотреть на карте
-    a.to-location-link(href="#")
+    a.to-location-link(href="#location" data-anchor data-aos-duration="1000" data-aos-anchor=".object-location-info" data-aos="zoom-out" data-aos-delay="400")
       include data/arr-down.svg
   // end object-location-info
 
@@ -107,22 +107,22 @@ block content
     .object-description-group
       .container
         .row
-          .col-xs-12.col-sm-6.col-md-6.col-lg-6
+          .col-xs-12.col-sm-6.col-md-6.col-lg-6(data-aos="fade-right")
             p.object-description-text Жилой комплекс «Династия» — новый знаковый архитектурный проект холдинга Sezar Group, реализуемый в примыкающем к центру Хорошевском районе Москвы. В основе концепции — выдержанные критерии бизнес-класса: авторский архитектурный проект, просторный приватный внутренний двор, высококачественные инженерные системы, строительные и отделочные материалы, продуманные планировки.
-          .col-xs-12.col-sm-6.col-md-6.col-lg-6
+          .col-xs-12.col-sm-6.col-md-6.col-lg-6(data-aos="fade-left" data-aos-delay="300")
             p.object-description-text Архитектура жилого комплекса «Династия» — тонко переосмысленная тема монументальной классики с выверенной чистотой линий и органичной комбинацией элементов ампира, эклектики и ар-деко. Комплекс объединяет три дома 21-24 этажей. Благодаря оригинальной форме обеспечен полностью закрытый от городской суеты просторный двор и перспективные видовые характеристики из окон.
-      a.btn.btn-spacing.btn-long.popup-link(href="#popup-order")
+      a.btn.btn-spacing.btn-long.popup-link(href="#popup-order" data-aos="fade-down")
         span Оставить заявку
   // end object-description
 
   // start object-gallery
   .object-gallery
-    h2.section-heading Галерея
+    h2.section-heading(data-aos="fade-up" data-aos-anchor=".object-gallery") Галерея
     .gallery-slider
       .wrapper
-        .slide
+        .slide(data-aos="fade-right" data-aos-anchor=".object-gallery")
           img(src="images/gallery1.jpg" alt="")
-        .slide
+        .slide(data-aos="fade-left" data-aos-anchor=".object-gallery")
           img(src="images/gallery2.jpg" alt="")
         .slide
           img(src="images/gallery1.jpg" alt="")
@@ -163,16 +163,16 @@ block content
     .object-description-group
       .container
         .row
-          .col-xs-12.col-sm-6.col-md-6.col-lg-6
+          .col-xs-12.col-sm-6.col-md-6.col-lg-6(data-aos="fade-right")
             p.object-description-text Все квартиры — свободной планировки и возможностью комбинировать любое количество комнат, создав индивидуальное решение. Ряд квартир — с просторными открытыми террасами до 80 кв.м., на которых покупатель может реализовать любое креативное решение: зеленый сад, тренажерный зал, игровую для детей. К услугам жителей — двухуровневый подземный паркинг на 1200 машиномест.
-          .col-xs-12.col-sm-6.col-md-6.col-lg-6
+          .col-xs-12.col-sm-6.col-md-6.col-lg-6(data-aos="fade-left" data-aos-delay="300")
             p.object-description-text В числе эксклюзивных предложений жилого комплекса «Династия» — великолепные видовые квартиры с романским окном-розой, из которых, как на ладони, открывается панорама излучины Москва-реки и Москва-Сити. Этот яркий акцент фасада, визитная карточка жилого комплекса. Исключительность положения владельца продемонстрирует всего одна фраза: «Я живу здесь».
   // end object-description
 
   // start object-features
   section.object-features
-    h2.section-heading Преимущества
-    .object-features-slider
+    h2.section-heading(data-aos="fade-in" data-aos-anchor=".object-features") Преимущества
+    .object-features-slider(data-aos="fade-up" data-aos-anchor=".object-features" data-aos-delay="400")
       .arrows
         button.arr.arr-left
           include data/arr-left.svg
@@ -236,12 +236,16 @@ block content
   // end object-features
 
   // start object-location
-  .object-location
+  .object-location#location
+    button.marker-trigger.js-marker-trigger(data-aos="fade-up" data-aos-anchor=".object-location" data-aos-duration="1700")
+      .cross
     .google-map
-    .inner
-      .marker-trigger.js-marker-trigger
-      h4 Хорошевское ш.,25
+    .overlay
+    .object-location-content
+      .inner(data-aos="fade-in" data-aos-anchor=".object-location" data-aos-duration="2000")
+        .wrap
+          h4 Хорошевское ш.,22
   .object-end
-   a.btn.popup-link(href="popup-order")
-      span Оставить заявку
+     a.btn.btn-long.btn-spacing.popup-link(href="popup-order" data-aos="fade-up" data-aos-delay="400")
+        span Оставить заявку
   // end object-location

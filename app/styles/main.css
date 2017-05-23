@@ -2595,7 +2595,7 @@ img {
 }
 
 .icon-about:before {
-  background-image: url(../images/about-project-ic1-active.png);
+  background-image: url(../images/about-project-ic1.png);
 }
 
 .icon-about:after {
@@ -2750,19 +2750,6 @@ img {
 }
 
 /* end object-distance */
-.object-location {
-  height: 400px;
-  position: relative;
-}
-
-.object-location .google-map {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .header {
   text-align: center;
   position: relative;
@@ -3467,11 +3454,16 @@ img {
 
 .btn span {
   position: relative;
+  -webkit-transition: all 0.3s 0s;
+  transition: all 0.3s 0s;
 }
 
 .btn:hover {
-  color: white;
   border-color: #ba9d64;
+}
+
+.btn:hover span {
+  color: white;
 }
 
 .btn:hover:before {
@@ -4017,12 +4009,25 @@ img {
   opacity: 1;
 }
 
+.object-features .slick-slide:not(.slick-center) {
+  cursor: pointer;
+}
+
+.object-features .slick-slide:not(.slick-center):hover .image img {
+  opacity: 1;
+}
+
 .object-features img {
   display: inline-block;
 }
 
+.object-features .slide {
+  padding-bottom: 10px;
+}
+
 .object-features-slider {
   position: relative;
+  padding-bottom: 30px;
 }
 
 .object-features-slider:before {
@@ -4135,6 +4140,260 @@ img {
 }
 
 /* end object-features */
+/* start object-location */
+.object-location {
+  position: relative;
+}
+
+.object-location .google-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.object-location .object-location-content {
+  padding: 30px 20px;
+  z-index: 10;
+  background-color: rgba(72, 78, 85, 0.9);
+  position: relative;
+  text-align: center;
+  -webkit-transition: all 0.3s 0s;
+  transition: all 0.3s 0s;
+}
+
+.object-location .object-location-content.hidden {
+  opacity: 0;
+  z-index: 0;
+}
+
+.object-location .object-location-content .inner {
+  overflow: hidden;
+}
+
+.object-location .object-location-content .inner.aos-animate:before, .object-location .object-location-content .inner.aos-animate:after,
+.object-location .object-location-content .inner.aos-animate .wrap:before,
+.object-location .object-location-content .inner.aos-animate .wrap:after {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.object-location .object-location-content .inner:before, .object-location .object-location-content .inner:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #9a805f;
+  -webkit-transform: translateX(-101%);
+          transform: translateX(-101%);
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
+.object-location .object-location-content .inner:after {
+  top: auto;
+  bottom: 0;
+  -webkit-transform: translateX(101%);
+          transform: translateX(101%);
+}
+
+.object-location .object-location-content .inner .wrap {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  padding-top: 100px;
+}
+
+.object-location .object-location-content .inner .wrap:before, .object-location .object-location-content .inner .wrap:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #9a805f;
+  -webkit-transform: translateY(-101%);
+          transform: translateY(-101%);
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
+.object-location .object-location-content .inner .wrap:after {
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  -webkit-transform: translateY(101%);
+          transform: translateY(101%);
+}
+
+.object-location h4 {
+  font-size: 18px;
+  color: #bda177;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: 'Avenir Next', Calibri, sans-serif;
+  font-weight: 300;
+}
+
+.object-location .marker-trigger {
+  padding: 0;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 66px;
+  left: 50%;
+  z-index: 20;
+  margin-left: -35px;
+  border-radius: 50%;
+  border: 1px solid #72695a;
+  background: #484e55;
+  cursor: pointer;
+  -webkit-transition: opacity 1s, border-color 0.3s 0s, -webkit-transform 1s !important;
+  transition: opacity 1s, border-color 0.3s 0s, -webkit-transform 1s !important;
+  transition: opacity 1s, border-color 0.3s 0s, transform 1s !important;
+  transition: opacity 1s, border-color 0.3s 0s, transform 1s, -webkit-transform 1s !important;
+  -webkit-transition: all 0.3s 0s;
+  transition: all 0.3s 0s;
+}
+
+.object-location .marker-trigger:hover {
+  border-color: white;
+}
+
+.object-location .marker-trigger:hover:before {
+  opacity: 0;
+}
+
+.object-location .marker-trigger:hover:after {
+  opacity: 1;
+}
+
+.object-location .marker-trigger:focus {
+  outline: none;
+}
+
+.object-location .marker-trigger:before, .object-location .marker-trigger:after {
+  content: '';
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  width: 24px;
+  height: 36px;
+  margin-left: -12px;
+  margin-top: -18px;
+  background: url(../images/marker.png) no-repeat center/100% 100%;
+  -webkit-transition: all 0.3s 0s;
+  transition: all 0.3s 0s;
+}
+
+.object-location .marker-trigger:after {
+  opacity: 0;
+  background-image: url(../images/marker-white.png);
+}
+
+.object-location .marker-trigger .cross {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  position: relative;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s 0s;
+  transition: all 0.3s 0s;
+  opacity: 0;
+}
+
+.object-location .marker-trigger .cross, .object-location .marker-trigger .cross::before, .object-location .marker-trigger .cross::after {
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #9a805f;
+  outline: 1px solid transparent;
+  -webkit-transition-property: background-color, -webkit-transform;
+  transition-property: background-color, -webkit-transform;
+  transition-property: background-color, transform;
+  transition-property: background-color, transform, -webkit-transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.object-location .marker-trigger .cross::before, .object-location .marker-trigger .cross::after {
+  position: absolute;
+  content: "";
+}
+
+.object-location .marker-trigger .cross::before {
+  top: -6px;
+}
+
+.object-location .marker-trigger .cross::after {
+  top: 6px;
+}
+
+.object-location .marker-trigger .cross {
+  background-color: transparent;
+}
+
+.object-location .marker-trigger .cross::before {
+  -webkit-transform: translateY(6px) rotate(45deg);
+  transform: translateY(6px) rotate(45deg);
+}
+
+.object-location .marker-trigger .cross::after {
+  -webkit-transform: translateY(-6px) rotate(-45deg);
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.object-location .marker-trigger.active {
+  background: #484e55;
+}
+
+.object-location .marker-trigger.active:before, .object-location .marker-trigger.active:after {
+  opacity: 0;
+}
+
+.object-location .marker-trigger.active .cross {
+  opacity: 1;
+}
+
+/* end object-location */
+.object-end {
+  text-align: center;
+  padding: 60px 0;
+}
+
+/* start made-by */
+.made-by {
+  font-size: 13px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 14px;
+  color: #352929;
+  -webkit-transition: all 0.3s 0s;
+  transition: all 0.3s 0s;
+}
+
+.made-by.aos-animate {
+  opacity: .6 !important;
+}
+
+.made-by:hover {
+  opacity: 1 !important;
+}
+
+/* end made-by */
 
 @media only screen and (min-width: 480px) {
   .distance-item {
@@ -4326,7 +4585,8 @@ img {
     display: none;
   }
   .footer {
-    padding: 60px 0 40px;
+    padding: 120px 0 30px;
+    background-color: #f9f9f9;
   }
   .footer-nav {
     font-size: 14px;
@@ -4367,9 +4627,6 @@ img {
   }
   .distance-item:last-child:before {
     display: none;
-  }
-  .object-location {
-    height: 520px;
   }
   .header:after {
     content: '';
@@ -4613,7 +4870,7 @@ img {
   }
   .promo-object {
     padding-bottom: 160px;
-    background-attachment: fixed;
+    background-attachment: fixed !important;
   }
   .objects-nav {
     margin-bottom: 130px;
@@ -4652,6 +4909,9 @@ img {
     left: auto;
     right: 80px;
   }
+  .object-features-slider {
+    padding-bottom: 60px;
+  }
   .object-features .slide-desc {
     padding-top: 130px;
     margin-left: -100px;
@@ -4662,6 +4922,28 @@ img {
   }
   .object-features .slider-pagination .inner {
     padding-bottom: 20px;
+  }
+  .object-location .object-location-content {
+    padding: 70px;
+  }
+  .object-location .object-location-content .inner .wrap {
+    height: 380px;
+    padding-top: 220px;
+  }
+  .object-location h4 {
+    letter-spacing: 8px;
+  }
+  .object-location .marker-trigger {
+    width: 110px;
+    height: 110px;
+    top: 168px;
+    margin-left: -55px;
+  }
+  .object-location .marker-trigger:before, .object-location .marker-trigger:after {
+    width: 34px;
+    height: 46px;
+    margin-left: -17px;
+    margin-top: -23px;
   }
 }
 

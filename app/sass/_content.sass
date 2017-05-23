@@ -477,9 +477,11 @@
     border-color: rgba(white, 0.3)
   span
     position: relative
+    +tr()
   &:hover
-    color: white
     border-color: $color-gold
+    span
+      color: white
     &:before
       transform: none
   &:before
@@ -745,13 +747,13 @@
     background: white url(../images/heart.png) no-repeat center
   +rmin($screen-sm)
     padding-bottom: 160px
-    background-attachment: fixed
+    background-attachment: fixed !important
 /* end promo-object */
 
 /* start objects-nav */
 .objects-nav
   text-align: center
-  border-bottom: 1px solid #8c8987 
+  border-bottom: 1px solid #8c8987
   position: relative
   z-index: 1
   margin-bottom: 70px
@@ -780,7 +782,7 @@
         width: 100%
         height: 1px
         background-color: #fff
-        position: absolute  
+        position: absolute
 /* end objects-nav */
 
 /* start about-object-slider */
@@ -859,7 +861,7 @@
     letter-spacing: 2px
     margin-bottom: 0
     margin-top: 0
-  p 
+  p
     margin-top: 0
     color: #383838
     font-size: 15px
@@ -890,7 +892,7 @@
       background-color: $color-gold
       svg path
         fill: white
-    
+
 /* end object-location-info */
 
 /* start object-description */
@@ -995,10 +997,20 @@
       transform: none
       img
         opacity: 1
+  .slick-slide:not(.slick-center)
+    cursor: pointer
+    &:hover
+      .image img
+        opacity: 1
   img
     display: inline-block
+  .slide
+    padding-bottom: 10px
   &-slider
     position: relative
+    padding-bottom: 30px
+    +rmin($screen-sm)
+      padding-bottom: 60px
     &:before
       content: ''
       position: absolute
@@ -1085,6 +1097,176 @@
         display: inline-block
         margin-left: 9px
         margin-right: 9px
-    
-
 /* end object-features */
+
+/* start object-location */
+.object-location
+  position: relative
+  .google-map
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 2
+  .object-location-content
+    padding: 30px 20px
+    z-index: 10
+    background-color: rgba(#484e55, 0.9)
+    position: relative
+    text-align: center
+    +tr()
+    &.hidden
+      opacity: 0
+      z-index: 0
+    +rmin($screen-sm)
+      padding: 70px
+    .inner
+      overflow: hidden
+      &.aos-animate
+        &:before,
+        &:after,
+        .wrap:before,
+        .wrap:after
+          transform: none
+      &:before, &:after
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 3px
+        background-color: #9a805f
+        transform: translateX(-101%)
+        transition: all 2s
+      &:after
+        top: auto
+        bottom: 0
+        transform: translateX(101%)
+      .wrap
+        display: block
+        padding: 10px 20px
+        text-decoration: none
+        font-weight: 700
+        text-transform: uppercase
+        position: relative
+        padding-top: 100px
+        &:before, &:after
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          width: 3px
+          height: 100%
+          background-color: #9a805f
+          transform: translateY(-101%)
+          transition: all 2s
+        &:after
+          top: auto
+          bottom: 0
+          left: auto
+          right: 0
+          transform: translateY(101%)
+        +rmin($screen-sm)
+          height: 380px
+          padding-top: 220px
+  h4
+    font-size: 18px
+    color: #bda177
+    text-transform: uppercase
+    letter-spacing: 3px
+    +avenir()
+    +rmin($screen-sm)
+      letter-spacing: 8px
+  .marker-trigger
+    padding: 0
+    width: 70px
+    height: 70px
+    position: absolute
+    top: 66px
+    left: 50%
+    z-index: 20
+    margin-left: -35px
+    border-radius: 50%
+    border: 1px solid #72695a
+    background: #484e55
+    cursor: pointer
+    transition: opacity 1s, border-color 0.3s 0s, transform 1s !important
+    &:hover
+      border-color: white
+      &:before
+        opacity: 0
+      &:after
+        opacity: 1
+      // ~ div.object-location-content
+        // .inner
+          // &:before,
+          // &:after,
+          // .wrap:before,
+          // .wrap:after
+            // transition-duration: 0.3s
+            // background-color: white
+          // h4
+            // color: white
+    +rmin($screen-sm)
+      width: 110px
+      height: 110px
+      top: 168px
+      margin-left: -55px
+    &:focus
+      outline: none
+    &:before, &:after
+      content: ''
+      top: 50%
+      left: 50%
+      position: absolute
+      width: 24px
+      height: 36px
+      margin-left: -12px
+      margin-top: -18px
+      background: url(../images/marker.png) no-repeat center / 100% 100%
+      +tr()
+      +rmin($screen-sm)
+        width: 34px
+        height: 46px
+        margin-left: -17px
+        margin-top: -23px
+    &:after
+      opacity: 0
+      background-image: url(../images/marker-white.png)
+    +tr()
+    .cross
+      position: absolute
+      margin: auto
+      top: 0
+      +burger(50px, 3px, 3px, #9a805f)
+      +burger-to-cross()
+      +tr()
+      opacity: 0
+    &.active
+      background: #484e55
+      &:before, &:after
+        opacity: 0
+      .cross
+        opacity: 1
+
+/* end object-location */
+
+.object-end
+  text-align: center
+  padding: 60px 0
+
+
+/* start made-by */
+.made-by
+  font-size: 13px
+  text-decoration: none
+  display: inline-block
+  margin-top: 14px
+  color: #352929
+  &.aos-animate
+    opacity: .6 !important
+  +tr()
+  &:hover
+    opacity: 1 !important
+/* end made-by */
