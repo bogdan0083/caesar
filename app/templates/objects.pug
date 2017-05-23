@@ -1,0 +1,113 @@
+//- title: Index Page
+extends layouts/_layout
+block head
+  - var title = 'Main page'
+  - var headerInner = true
+  - var active = 0
+
+block content
+  // start objects-page
+  .objects-page
+    h1.section-heading.page-title Жилая недвижимость
+    // start objects-group
+    .objects-group
+      // start objects-item
+      .objects-item
+        a.object-preview(href="#" data-aos="fade-right-big" data-aos-duration="1000")
+          .object-go
+            include data/arr-right.svg
+          .inner
+            .background(style="background-image: url(../images/promo-bg3.jpg)")
+            img.logo(src="images/dynasty-logo.png")
+        .object-info(data-aos="fade-left-big" data-aos-duration="1000")
+          .inner
+            .object-info-content
+              h2 «Династия»
+              p Жилой комплекс «Династия» — новый знаковый архитектурный проект холдинга Sezar Group, реализуемый в примыкающем к центру Хорошевском районе Москвы. В основе концепции — выдержанные критерии бизнес-класса: авторский архитектурный проект, просторный приватный внутренний двор, высококачественные инженерные системы, строительные и отделочные материалы, продуманные планировки.
+          .object-info-bottom
+            span Официальный сайт:
+            a.btn.btn-spacing.btn-long.btn-icon-link(href="www.sz-dinasty.ru")
+              span.icon.icon-link
+              span www.sz-dinasty.ru
+      // end objects-item
+      // start objects-item
+      .objects-item
+        a.object-preview(href="#" data-aos="fade-left-big" data-aos-duration="1000")
+          .object-go
+            include data/arr-right.svg
+          .inner
+            .background(style="background-image: url(../images/promo-bg2.jpg)")
+            img.logo(src="images/rasskazovo-logo.png")
+        .object-info(data-aos="fade-right-big" data-aos-duration="1000")
+          .inner
+            .object-info-content
+              h2 «Рассказово»
+              p «Рассказово» как нельзя лучше отвечает концепции «Жилой Комплекс для жизни и отдыха». Он включает в себя все необходимое для занятий спортом, долгих семейных прогулок и гармоничного отдыха. Для полноценной жизни здесь предусмотрена богатейшая инфраструктура: детские сады, школа, поликлиника, торговый и бизнес центры, супермаркет, ресторанный комплекс.
+          .object-info-bottom
+            span Официальный сайт:
+            a.btn.btn-spacing.btn-long.btn-icon-link(href="www.sz-rasskazovo.ru")
+              span.icon.icon-link
+              span www.sz-rasskazovo.ru
+      // end objects-item
+      // start objects-item
+      .objects-item
+        a.object-preview(href="#" data-aos="fade-right-big" data-aos-duration="1000")
+          .object-go
+            include data/arr-right.svg
+          .inner
+            .background(style="background-image: url(../images/promo-bg3.jpg)")
+            img.logo(src="images/dynasty-logo.png")
+        .object-info(data-aos="fade-left-big" data-aos-duration="1000")
+          .inner
+            .object-info-content
+              h2 «Николин парк»
+              p Жилой комплекс «Николин парк» располагается в перспективном и престижном юго-западном направлении «новой Москвы», в окружении лесного массива всего в 4 километрах от Московской кольцевой автодороги, и в пяти минутах езды на автомобиле от станции метро «Теплый стан». Специально для жителей комплекса «Николин Парк» от метро до микрорайона организовано маршрутное такси «Николин Парк».
+          .object-info-bottom
+            span Официальный сайт:
+            a.btn.btn-spacing.btn-long.btn-icon-link(href="www.nikolin-park.ru")
+              span.icon.icon-link
+              span www.nikolin-park.ru
+      // end objects-item
+    // end objects-page
+  // end objects-group
+  // start other-objects-link
+  a.other-objects-link(href="#")
+    .section-heading(data-aos="fade-up" data-aos-duration="800" data-aos-anchor=".other-objects-link") коммерческая недвижимость
+    .arr(data-aos="" data-aos-anchor=".other-objects-link")
+      include data/arr-right-secondary.svg
+  // end other-objects-link
+  // start news
+  section.news
+    h2.section-heading.page-title.color-black(data-aos="fade-up" data-aos-duration="800" data-aos-anchor="news") Новости
+    .news-group
+      // start news-item
+      a.news-item(href="#")
+        .news-image(href="#" data-aos="fade-left-big" data-aos-duration="1000")
+          .background(style="background-image: url(../images/news1.jpg)")
+        .news-info(data-aos="fade-right-big" data-aos-duration="1000")
+          .inner
+            .news-info-content
+              .date
+                .num 18
+                .month окт
+              .news-info-name Ипотека в Банке Глобэкс теперь от 9,5%!
+              p.news-info-more Узнать больше
+      // end news-item
+      // start news-item
+      a.news-item(href="#")
+        .news-image(href="#" data-aos="fade-right-big" data-aos-duration="1000")
+          .background(style="background-image: url(../images/news2.jpg)")
+        .news-info(data-aos="fade-left-big" data-aos-duration="1000")
+          .inner
+            .news-info-content
+              .date
+                .num 18
+                .month окт
+              .news-info-name В жилом комплексе «Рассказово» открыты продажи квартир в новом доме
+              p.news-info-more Узнать больше
+      // end news-item
+    a.news-more(href="#")
+      .circle(data-aos="")
+        include data/plus.svg
+      span(data-aos="fade-up" data-aos-delay="200") Еще новости
+  // end news
