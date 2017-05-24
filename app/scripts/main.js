@@ -115,11 +115,6 @@ $(document).ready(function () {
     Waypoint.refreshAll();
   });
 
-  // $('body').imagesLoaded(function () {
-  // AOS.refresh();
-  // Waypoint.refreshAll();
-  // });
-
   $aboutObjectSlider.slick({
     autoplay: false,
     swipe: false,
@@ -129,7 +124,23 @@ $(document).ready(function () {
     adaptiveHeight: true
   });
 
-  // about object slider
+  // offers slider
+  var $offersSlider = $('.offers-slider');
+
+  $offersSlider.on('init', function (slick) {
+    AOS.refresh();
+  });
+
+  $offersSlider.slick({
+    autoplay: false,
+    swipe: false,
+    infinite: false,
+    arrows: false,
+    dots: false,
+    adaptiveHeight: true
+  });
+
+  // gallery slider
   var $gallery = $('.gallery-slider .wrapper');
 
   $gallery.on('init', function (slick) {
@@ -157,7 +168,7 @@ $(document).ready(function () {
     ]
   });
 
-  // about object slider
+  // features slider
   var $featuresSlider = $('.object-features-slider .wrapper');
 
   $featuresSlider.on('beforeChange', function(_, slick, current, next) {

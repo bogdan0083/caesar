@@ -1,0 +1,188 @@
+//- title: Index Page
+extends layouts/_layout
+block head
+  - var title = 'Main page'
+  - var headerInner = true
+  - var active = 2
+
+block content
+  // start news-page
+  .offers-page
+    section.offers
+      // start news-article-top
+      .offer-item-promo(style="background-image: url(../images/offer1.jpg)")
+        .container
+          .inner(data-aos="fade-in" data-aos-duration="1000" data-aos-delay="200" data-aos-anchor=".news-item-promo")
+            // start dates
+            .dates.dates-block-offer(data-aos="fade-up" data-aos-anchor=".offer-item-promo" data-aos-duration="800")
+              .date-block.date-block-offer
+                div.from с
+                div.digit 01
+                div.month окт
+              .separator
+              .date-block.date-block-offer
+                div.from по
+                div.digit 25
+                div.month окт
+            // end dates
+            h3.title-top(data-aos="fade-up" data-aos-anchor=".offer-item-promo" data-aos-duration="500" data-aos-delay="300") SEZAR GROUP ОБЪЯВЛЯЕТ ТВОРЧЕСКИЙ КОНКУРс
+            h1.title.section-heading(data-aos="fade-up" data-aos-anchor=".offer-item-promo" data-aos-duration="500" data-aos-delay="400") 2 МИЛЛИОНА В ПОДАРОК
+        a.circle-link.popup-link(href="#popup-subscribe")
+          include data/envelope.svg
+      // end news-article-top
+      // start offer-results
+      section.offer-results
+        .container
+          h2.section-heading(data-aos="fade-down" data-aos-anchor=".offer-results") Призовой фонд
+          .offer-results-item(data-aos="fade-in" data-aos-duration="200" data-aos-delay="0")
+            .num(data-aos="zoom-out" data-aos-anchor=".offer-results" data-aos-delay="400") 2
+            .text(data-aos="zoom-out" data-aos-anchor=".offer-results" data-aos-delay="500") место
+            .caption(data-aos="fade-up" data-aos-anchor=".offer-results" data-aos-delay="400") машино-место
+          .offer-results-item(data-aos="fade-in" data-aos-duration="200" data-aos-delay="200")
+            .num(data-aos="zoom-out" data-aos-anchor=".offer-results" data-aos-delay="700") 1
+            .text(data-aos="zoom-out" data-aos-anchor=".offer-results" data-aos-delay="800") место
+            .caption(data-aos="fade-up" data-aos-anchor=".offer-results" data-aos-delay="900") автомобиль
+          .offer-results-item(data-aos="fade-in" data-aos-duration="200" data-aos-delay="400")
+            .num(data-aos="zoom-out" data-aos-anchor=".offer-results" data-aos-delay="1000") 3
+            .text(data-aos="zoom-out" data-aos-anchor=".offer-results" data-aos-delay="1100") место
+            .caption(data-aos="fade-up" data-aos-anchor=".offer-results" data-aos-delay="1200") ноутбук
+      // end offer-results
+      article.post.post-offer
+        .container
+          p
+            | Купив квартиру в период с 1 декабря 2016 г. по 28 февраля 2017 г., Вы можете стать обладателем ценного приза!
+            | Sezar Group продолжает новогоднюю традицию, начатую в прошлом году, и предлагает каждому покупателю квартиры в зимнем сезоне 2016/2017 года стать соавтором «картины» будущей жизни в «Рассказово» и побороться за главный приз — автомобиль.
+          p
+            | Призовой фонд:
+            br
+            | 1 место — Автомобиль
+            br
+            | 2 место — Машино-место в паркинге ЖК «Рассказово» в подарок
+            br
+            | 3 место — Ноутбук
+          p
+            | Творческое задание:
+            br
+            | Направить в адрес конкурсной комиссии по адресу
+            a(href="#") new-year@sezar-group.ru
+          p
+            | Фото с изображением вашего хобби или любимого занятия
+            br
+            | Придумать к этому фото:
+            br
+            | a) Короткое, емкое название,
+            br
+            | b) расширенное описание, продолжив фразу «В «Рассказово» я буду…»
+          p
+            | Сроки проведения творческого конкурса:
+            br
+            | Прием конкурсных работ:   1 апреля 2017 г. с 00:00 по 23:59*
+            br
+            | Оценка конкурсных работ комиссией:   2 апреля – 14 мая 2017 г.
+            br
+            | Объявление результатов конкурса**:   15 мая – 15 июня 2017 г.
+            br
+            | Награждение победителей/выдача призов:   15 июня – 1 июля 2017 г.
+          p
+            | Условия участия в конкурсе:
+            br
+            | Участие в конкурсе принимают покупатели квартир в ЖК «Рассказово», совершившие сделку с 01.12.2016 по 28.02.2017
+            | и оплатившие не менее 50% по договору долевого участия (включая сделки с привлечением ипотечного кредитования).
+            | В момент заключения договорных отношений, непосредственно в офисе продаж Sezar Group, участник получает именной «Сертификат участника конкурса», предоставляющий право на участие в конкурсе и получение приза. Автором конкурсной
+            | работы — фотоизображения и сопровождающих его текстов – является участник, получивший именной сертификат, лично.
+            | Лучшие конкурсные работы будут опубликованы на сайте
+            a(href="#") www.sz-rasskazovo.ru
+            | .
+          p
+            | Критерии оценки конкурсных работ:
+            br
+            | Полнота представленной на конкурс работы (фотоизображение, его название, расширенное описание) соответствие
+            | материалов конкурсной работы заявленной теме оригинальность идеи, креативный подход к созданию конкурсной работы
+            | художественная ценность фотоизображения и тестового сопровождения. Организатор вправе в любое время вносить
+            | изменения в настоящие Правила в одностороннем порядке.
+          p
+            small * по московскому времени
+            br
+            small ** Результаты конкурса публикуются на официальном сайте #[a(href="") www.sz-rasskazovo.ru]
+        footer.post-footer
+         a.btn.btn-long.btn-spacing.popup-link(href="popup-order" data-aos="fade-up" data-aos-delay="400")
+            span Отправить работу
+      // start offer-result-link
+      a.offer-result-link(href="" data-aos="fade-up" data-aos-delay="200")
+        span.icon.icon-statue
+        h2.section-heading Итоги акции
+        p 2 МИЛЛИОНА В ПОДАРОК
+
+      // end offer-result-link
+      .offers-slider
+        .slide
+          .offers-group
+            // start news-item
+            a.offer-item(href="#")
+              .offer-image(href="#" data-aos="fade-left-big" data-aos-duration="1000")
+                .background(style="background-image: url(../images/offer2.jpg)")
+              .offer-info(data-aos="fade-right-big" data-aos-duration="1000")
+                .inner
+                  .offer-info-content
+                    .offer-info-type Ипотека 9,5%
+                    .offer-info-desc Уникальное предложение ипотечного кредитования, разработанное совместно Группой компаний Sezar Group и АО КБ «Глобэкс»
+                    p.offer-info-more Узнать больше
+            // end news-item
+            // start news-item
+            a.offer-item(href="#")
+              .offer-image(href="#" data-aos="fade-right-big" data-aos-duration="1000")
+                .background(style="background-image: url(../images/offer2.jpg)")
+              .offer-info(data-aos="fade-left-big" data-aos-duration="1000")
+                .inner
+                  .offer-info-content
+                    .offer-info-type 100 000 рублей в подарок!
+                    .offer-info-desc Уникальный шанс! Только в августе, сентябре, октябре и ноябре всем покупателям квартир в первой очереди ЖК «Рассказово» — 100 000 рублей в подарок!
+                    p.offer-info-more Узнать больше
+            // end news-item
+            // start news-item
+            a.offer-item(href="#")
+              .offer-image(href="#" data-aos="fade-left-big" data-aos-duration="1000")
+                .background(style="background-image: url(../images/offer4.jpg)")
+              .offer-info(data-aos="fade-right-big" data-aos-duration="1000")
+                .inner
+                  .offer-info-content
+                    .offer-info-type Акция «Выбирай себе соседей»
+                    .offer-info-desc Уникальное предложение ипотечного кредитования, разработанное совместно Группой компаний Sezar Group и АО КБ «Глобэкс»
+                    p.offer-info-more Узнать больше
+            // end news-item
+        .slide
+          .offers-group
+            // start news-item
+            a.offer-item(href="#")
+              .offer-image(href="#" data-aos="fade-left-big" data-aos-duration="1000")
+                .background(style="background-image: url(../images/offer2.jpg)")
+              .offer-info(data-aos="fade-right-big" data-aos-duration="1000")
+                .inner
+                  .offer-info-content
+                    .offer-info-type Ипотека 9,5%
+                    .offer-info-desc Уникальное предложение ипотечного кредитования, разработанное совместно Группой компаний Sezar Group и АО КБ «Глобэкс»
+                    p.offer-info-more Узнать больше
+            // end news-item
+            // start news-item
+            a.offer-item(href="#")
+              .offer-image(href="#" data-aos="fade-right-big" data-aos-duration="1000")
+                .background(style="background-image: url(../images/offer2.jpg)")
+              .offer-info(data-aos="fade-left-big" data-aos-duration="1000")
+                .inner
+                  .offer-info-content
+                    .offer-info-type 100 000 рублей в подарок!
+                    .offer-info-desc Уникальный шанс! Только в августе, сентябре, октябре и ноябре всем покупателям квартир в первой очереди ЖК «Рассказово» — 100 000 рублей в подарок!
+                    p.offer-info-more Узнать больше
+            // end news-item
+            // start news-item
+            a.offer-item(href="#")
+              .offer-image(href="#" data-aos="fade-left-big" data-aos-duration="1000")
+                .background(style="background-image: url(../images/offer4.jpg)")
+              .offer-info(data-aos="fade-right-big" data-aos-duration="1000")
+                .inner
+                  .offer-info-content
+                    .offer-info-type Акция «Выбирай себе соседей»
+                    .offer-info-desc Уникальное предложение ипотечного кредитования, разработанное совместно Группой компаний Sezar Group и АО КБ «Глобэкс»
+                    p.offer-info-more Узнать больше
+            // end news-item
+  // end news

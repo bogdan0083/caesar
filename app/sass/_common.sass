@@ -123,7 +123,6 @@ img
   padding: 0
   margin: 0
 
-
 /* start socials */
 .socials
   text-align: center
@@ -242,6 +241,22 @@ img
   &:after
     background-image: url(../images/about-project-ic2-active.png)
 
+.icon-star
+  width: 49px
+  height: 46px
+  &:before
+    background-image: url(../images/star.png)
+  &:after
+    background-image: url(../images/star-black.png)
+
+.icon-statue
+  height: 64px
+  width: 25px
+  &:before
+    background-image: url(../images/statue.png)
+  &:after
+    background-image: url(../images/statue-black.png)
+
 .icon-link
   width: 15px
   height: 15px
@@ -254,6 +269,9 @@ img
 
 /* start tabs */
 .tabs
+  box-shadow: 0 2px 20px 0 rgba(black, 0.1)
+  z-index: 10
+  position: relative
   +clr()
 
 .tab-pane
@@ -267,6 +285,8 @@ img
   color: #987641
   border-bottom: 1px solid #e1e1e1
   position: relative
+  .icon-wrap
+    height: 63px
   +avenir()
   +tr()
   &:before, &:after

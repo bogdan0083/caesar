@@ -1,0 +1,61 @@
+//- title: Index Page
+extends layouts/_layout
+block head
+  - var title = 'Main page'
+  - var headerInner = true
+  - var active = 4
+
+block content
+  // start news-page
+  .news-page
+    section.news
+      // start news-article-top
+      .news-article-top(style="background-image: url(../images/news3.jpg)")
+        .container
+          .inner(data-aos="fade-in" data-aos-duration="1000" data-aos-delay="200" data-aos-anchor=".news-item-promo")
+            .date
+              .num 18
+              .month окт
+            h1.title.section-heading ЖК «Рассказово» стал лауреатом премии RREF Awards 2016
+        .like
+      // end news-article-top
+      article.post
+        .container
+          p 10 сентября в компании Sezar Group стартовал проект «Дни открытых дверей в ЖК «Рассказово» — экскурсий по строительной площадке в сопровождении топ-менеджмента компании. Участники мероприятия имеют возможность лично оценить качество строительства, получить профессиональные консультации «из первых уст», ответы на оперативные и стратегические вопросы. Уже первый «День открытых дверей в ЖК «Рассказово» показал высокий интерес аудитории к такому формату коммуникаций.
+          p Идею проведения открытых экскурсий комментирует директор по продажам Sezar Group Виктор Прокопенко: «Мы ориентировались на пожелания, которые услышали от наших клиентов, и решили, что проведение такого эксперимента будет интересным опытом для нас самих. Однако мы не ожидали столь высокого интереса со стороны аудитории, учитывая, что посещение строительной площадки в ЖК «Рассказово» возможно ежедневно. В результате на день, предшествующий мероприятию, у нас была полная запись на обе анонсированные даты, и мы в оперативном режиме продлили программу еще на один день, а в перспективе рассчитываем сделать «Дни открытых дверей» регулярной практикой».
+          p В течение месяца «Дни открытых дверей» в ЖК «Рассказово» проходят каждые выходные. Записаться на экскурсию можно, заполнив форму http://www.sz-rasskazovo.ru/open-doors. Индивидуальное посещение ЖК «Рассказово» по-прежнему доступно ежедневно с 10:00 до 21:00. Для вашего удобства рекомендуем предварительно забронировать время.
+        footer.post-footer
+          a.post-link(href="http://sz-rasskazovo.ru")
+            span.icon.icon-link
+            span.text sz-rasskazovo.ru
+      h2.watch-also(data-aos="fade-in")
+        span(data-aos="fade-up" data-aos-duration="800" data-aos-anchor=".watch-also" data-aos-delay="400") Смотрите также
+        .arr(data-aos="fade-up" data-aos-duration="800" data-aos-anchor=".watch-also" data-aos-delay="700")
+      .news-group
+        // start news-item
+        a.news-item(href="#")
+          .news-image(href="#" data-aos="fade-left-big" data-aos-duration="1000")
+            .background(style="background-image: url(../images/news1.jpg)")
+          .news-info(data-aos="fade-right-big" data-aos-duration="1000")
+            .inner
+              .news-info-content
+                .date
+                  .num 18
+                  .month окт
+                .news-info-name Ипотека в Банке Глобэкс теперь от 9,5%!
+                p.news-info-more Узнать больше
+        // end news-item
+        // start news-item
+        a.news-item(href="#")
+          .news-image(href="#" data-aos="fade-right-big" data-aos-duration="1000")
+            .background(style="background-image: url(../images/news2.jpg)")
+          .news-info(data-aos="fade-left-big" data-aos-duration="1000")
+            .inner
+              .news-info-content
+                .date
+                  .num 18
+                  .month окт
+                .news-info-name В жилом комплексе «Рассказово» открыты продажи квартир в новом доме
+                p.news-info-more Узнать больше
+        // end news-item
+  // end news

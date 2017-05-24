@@ -759,23 +759,39 @@
     margin-bottom: 30px
     +rmin($screen-sm)
       margin-bottom: 60px
-  .like
-    width: 106px
-    height: 106px
-    border-radius: 50%
-    border: 1px solid #e5e5e5
-    background-color: #fff
-    left: 50%
-    margin-left: -54px
-    position: absolute
-    bottom: -50px
-    z-index: 3
-    background: white url(../images/heart.png) no-repeat center
   +rmin($screen-sm)
     padding-bottom: 160px
     background-attachment: fixed !important
 /* end promo-object */
 
+.like, .circle-link
+  width: 106px
+  height: 106px
+  border-radius: 50%
+  border: 1px solid #e5e5e5
+  left: 50%
+  margin-left: -54px
+  position: absolute
+  bottom: -50px
+  z-index: 20
+  background: white
+  box-shadow: 0 0 10px 0 rgba(black, 0.1)
+  +tr()
+  svg
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    margin: auto
+  svg path
+    +tr()
+
+.circle-link:hover
+  background-color: #a4875a
+  transform: scale(1.2) rotate(360deg)
+  svg path
+    fill: white
 /* start objects-nav */
 .objects-nav
   text-align: center
@@ -1636,7 +1652,7 @@
     .news-info
       float: left
 
-.news-more
+.link-more
   display: block
   text-decoration: none
   background-color: #eeeeee
@@ -1688,7 +1704,7 @@
         fill: white
 
 /* start .news-promo */
-.news-item-promo
+.news-item-promo, .news-article-top
   position: relative
   background-size: cover
   background-position: center
@@ -1701,11 +1717,11 @@
     padding-bottom: 100px
     background-attachment: fixed
     overflow: hidden
-  a
+  .inner, .link
     text-decoration: none
     display: block
     position: relative
-    &:hover
+    &:not(.news-article-top):hover
       .title
         color: white
     +rmin($screen-sm)
@@ -1790,6 +1806,15 @@
           transform: none
 /* end .news-promo */
 
+.news-article-top
+  padding-bottom: 100px
+  +rmin($screen-sm)
+    overflow: visible
+  .inner
+    &:before, &:after
+      display: none
+
+
 /* start .news-item-full */
 .news-item-full
   position: relative
@@ -1843,3 +1868,367 @@
       font-size: 30px
       +avenir()
 /* end .news-full */
+
+/* start post */
+.post
+  font-size: 17px
+  line-height: 1.6
+  text-align: center
+  padding: 80px 0 40px
+  +rmin($screen-sm)
+    padding-bottom: 90px
+  .container
+    max-width: 990px
+    margin: 0 auto
+  &-footer
+    margin-top: 50px
+    text-align: center
+  &-offer
+    text-align: left
+  .container
+    p, ul, ol
+      margin: 1.4em 0
+    a
+      color: #987641
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+
+.post-link
+  color: #987641
+  text-decoration: none
+  font-size: 19px
+  line-height: 20px
+  .icon
+    margin-right: 10px
+  &:hover
+    .text
+      display: inline-block
+      text-decoration: underline
+      vertical-align: middle
+      position: relative
+      top: -2px
+/* end post */
+
+.watch-also
+  padding: 30px 0
+  margin: 0
+  color: #987641
+  font-size: 24px
+  text-transform: uppercase
+  letter-spacing: 4px
+  text-align: center
+  background-color: #eeeeee
+  position: relative
+  +avenir()
+  .arr
+    display: none
+    +rmin($screen-sm)
+      display: block
+  +rmin($screen-sm)
+    font-size: 40px
+    padding: 110px 0 2px
+    &:before
+      content: ''
+      top: 34px
+      left: 50%
+      background-color: #747474
+      height: 56px
+      width: 1px
+      position: absolute
+    .arr
+      width: 25px
+      margin: 20px auto 30px
+      background: url(../images/arr-down.svg) no-repeat center bottom
+      &:before
+        content: ''
+        margin: auto
+        width: 1px
+        height: 62px
+        background-color: #747474
+        display: block
+
+/* start offer-item-promo */
+.offer-item-promo
+  position: relative
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  color: white
+  text-align: center
+  padding: 40px 0 100px
+  +rmin($screen-sm)
+    padding-top: 80px
+    padding-bottom: 100px
+    background-attachment: fixed
+  .inner, .link
+    text-decoration: none
+    display: block
+    position: relative
+    &:hover
+      .title, .title-top, .read-more
+        color: white
+      .read-more
+        border-color: white
+    +rmin($screen-sm)
+      padding-top: 40px
+      padding-bottom: 40px
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(black, 0.7)
+  .dates
+    margin-bottom: 40px
+    +rmin($screen-sm)
+      .separator
+        +tr(all, 1s, .8s)
+        opacity: 0
+        width: 10px
+      &.aos-animate
+        .separator
+          width: 90px
+          opacity: 1
+  .container
+    position: relative
+    +rmin($screen-sm)
+      max-width: 930px
+  .title-top
+    font-weight: 400
+    font-size: 18px
+    margin: 0
+    letter-spacing: 3px
+  .title, .title-top
+    color: rgba(white, 0.7)
+    transition: opacity 1s .7s, color 0.3s !important
+    margin-top: 10px
+    text-transform: uppercase
+  .read-more
+    display: inline-block
+    padding: 16px 40px
+    text-align: center
+    border-top: 1px solid rgba(white, 0.2)
+    margin-top: 30px
+    font-size: 15px
+    color: rgba(white, .6)
+    transition: opacity 1s .8s, color 0.3s, transform 1s .8s, border-color 0.3s !important
+/* end .offer-item-promo */
+
+.offer-image
+  height: 0
+  padding-bottom: 50%
+  position: relative
+  z-index: 2
+  display: block
+  overflow: hidden
+  &:before
+    content: ''
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(black, 0.3)
+    position: absolute
+    z-index: 3
+    +tr()
+    display: none
+    +rmin($screen-sm)
+      display: block
+  +rmin($screen-sm)
+    float: left
+    height: 400px
+    width: 50%
+    padding-bottom: 0
+  .background
+    position: absolute
+    top: 0
+    bottom: 0
+    width: 100%
+    height: 100%
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    z-index: 1
+    +tr()
+
+.offer-info
+  padding: 60px 15px
+  position: relative
+  +rmin($screen-sm)
+    float: left
+    width: 50%
+    height: 400px
+  +rmin($screen-md)
+    display: table
+    .inner
+      display: table-cell
+      vertical-align: middle
+      .offer-info-content
+        max-width: 600px
+        margin: auto
+        position: relative
+  &-type
+    font-size: 18px
+    letter-spacing: 3px
+    text-transform: uppercase
+    color: #987641
+    margin-bottom: 30px
+  &-desc
+    line-height: 1.6
+  &-more
+    text-align: center
+    border-top: 1px solid #d5d5d5
+    margin-top: 30px
+    padding-top: 20px
+    font-size: 15px
+    color: rgba(white, .6)
+    color: #848484
+    display: inline-block
+    padding-left: 10px
+    padding-right: 10px
+    +tr()
+  .date
+    color: #8f6a32
+    padding-bottom: 30px
+    margin-bottom: 30px
+    line-height: 1
+    position: relative
+    &:before
+      content: ''
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+      width: 124px
+      height: 1px
+      background-color: #d5d5d5
+      position: absolute
+    .num
+      font-size: 30px
+      +avenir()
+
+.offers-group
+  overflow: hidden
+  +clr()
+
+.offer-item
+  text-align: center
+  text-decoration: none
+  &:hover
+    .offer-image:before
+      opacity: 0
+    .background
+      transform: scale(1.2)
+    .offer-info-more
+      color: $color-text
+      border-color: $color-text
+
+.offer-item:nth-child(2n+1)
+  +rmin($screen-sm)
+    .offer-image
+      float: right
+      .object-go
+        right: auto
+        left: 0
+    .offer-info
+      float: left
+
+/* start offer-results */
+.offer-results
+  text-align: center
+  background-color: #f9f9f9
+  padding: 80px 0 50px
+  position: relative
+  &-item
+    padding-top: 34px
+    margin: 40px 0
+    +rmin($screen-sm)
+      display: inline-block
+      width: 240px
+      &:after
+        content: ''
+        position: absolute
+        top: -10px
+        right: 0
+        height: 110%
+        width: 1px
+        background-color: #d7d7d7
+        height: 10px
+        opacity: 0
+        +tr(all, 1s)
+      &:last-child:after
+        display: none
+    +rmin($screen-md)
+      width: 300px
+    &:before
+      content: ''
+      left: 50%
+      top: 0
+      width: 142px
+      height: 142px
+      margin-left: -71px
+      border: 1px solid #d8d8d8
+      position: absolute
+      border-radius: 50%
+      transition: all 0.4s 0.2s
+    .num, .text
+      color: #987641
+      line-height: 1
+    .num
+      font-size: 48px
+      +avenir()
+    .text
+      font-size: 17px
+      letter-spacing: 3px
+    .caption
+      letter-spacing: 2px
+      text-transform: uppercase
+      font-size: 15px
+      margin-top: 70px
+    +rmin($screen-sm)
+      &:before
+        transform: scale(1.2)
+        opacity: 0
+      &.aos-animate
+        &:before
+          transform: none
+          opacity: 1
+        &:after
+          height: 110%
+          opacity: 1
+/* end offer-results */
+
+/* start offer-result-link */
+.offer-result-link
+  padding: 40px 0
+  text-align: center
+  display: block
+  background-color: #eeeeee
+  text-decoration: none
+  +tr()
+  +rmin($screen-sm)
+    padding: 80px 0
+  .icon
+    &:after
+      background-image: url(../images/statue-white.png)
+  p
+    margin-bottom: 0
+    margin-top: 0
+    letter-spacing: 3px
+    +tr()
+  .section-heading
+    color: #987641
+    margin-top: 8px
+    margin-bottom: 4px
+    +tr()
+  &:hover
+    background-color: #987641
+    .icon:before
+      opacity: 0
+    .icon:after
+      opacity: 1
+    p, .section-heading
+      color: white
+/* end offer-result-link */
