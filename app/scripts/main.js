@@ -59,7 +59,7 @@ $(document).ready(function () {
     $promoBackgrounds.eq(idx).addClass('visible');
     $frontpageNav.addClass('hidden');
     $mouseIcon.addClass('hidden');
-  }
+   }
 
   function onPromoItemOut(e) {
     var idx = $promoItem.index( $(this) );
@@ -268,14 +268,19 @@ $(document).ready(function () {
     });
   }
 
-  var waypoints = new Waypoint({
-    element: document.querySelector( '.object-distance' ),
-    handler: function () {
-      animateNumbers();
-      this.destroy();
-    },
-    offset: '100%'
-  })
+  if ($('.object-distance').length > 0) {
+
+    var waypoints = new Waypoint({
+      element: document.querySelector( '.object-distance' ),
+      handler: function () {
+        animateNumbers();
+        this.destroy();
+      },
+      offset: '100%'
+    })
+
+  }
+
   var $markerTrigger = $('.js-marker-trigger');
 
   $markerTrigger.click(function (e) {
@@ -291,7 +296,6 @@ $(document).ready(function () {
       setTimeout(function () {
         $objectLocationContent.css('z-index', 0);
       }, 410);
-
     } else {
       $objectLocationContent.css('z-index', 10);
 
@@ -301,6 +305,17 @@ $(document).ready(function () {
 
     }
 
+  });
+
+  // magnificPopup
+  $('.popup-link').magnificPopup({type: 'inline', showCloseBtn: false, removalDelay: 300, mainClass: 'mfp-move-horizontal'});
+
+  $('.input-block :input').focus(function () {
+    $(this).closest('.input-block').addClass('selected');
+  });
+
+  $('.input-block :input').blur(function () {
+    $(this).closest('.input-block').removeClass('selected');
   });
 
   // ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ

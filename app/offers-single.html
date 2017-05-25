@@ -322,6 +322,92 @@
         </footer>
         <!--END footer-->
     </div>
+    <!-- start popups-->
+    <div class="popup popup-order mfp-with-anim mfp-hide" id="popup-order">
+        <button class="popup-close" onclick="$.magnificPopup.close()"><span class="cross"></span>
+        </button>
+        <div class="popup-header">
+            <h3>Оставить заявку</h3>
+            <p>Оставьте заявку или получите бесплатную консультацию, позвонив нам по телефону: <span>+7 (495) 643 85 88</span>
+            </p>
+        </div>
+        <div class="popup-content">
+            <form class="popup-form">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="input-block"><span>ФИО<i class="required">*</i></span>
+                            <input type="text" name="user-fio">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="input-block input-block-mail"><span> E-mail<i class="required">*</i></span>
+                            <input type="text" name="user-email">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="input-block"><span>Телефон </span>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="input-block input-block-textarea"><span>Сообщение <i class="required">*</i></span>
+                            <textarea name="user-message"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-form-bottom"><span class="popup-form-caption">Все поля обязательны для заполнения</span>
+                    <button class="btn btn-spacing btn-long"><span>Оставить заявку</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- end popup-order-->
+    <!-- start popup success-->
+    <div class="popup popup-success mfp-with-anim mfp-hide" id="popup-success">
+        <button class="popup-close" onclick="$.magnificPopup.close()"><span class="cross"></span>
+        </button>
+        <div class="popup-header">
+            <h3>Спасибо!</h3>
+        </div>
+        <div class="popup-content">
+            <h4>Ваша заявка успешно отправлена</h4>
+            <p>Наши менеджеры свяжутся с Вами в ближайшее время</p>
+        </div>
+    </div>
+    <!-- start popup success-->
+    <!-- start popup callback-->
+    <div class="popup popup-callback mfp-with-anim mfp-hide" id="popup-callback">
+        <button class="popup-close" onclick="$.magnificPopup.close()"><span class="cross"></span>
+        </button>
+        <div class="popup-header">
+            <h3>Обратный звонок</h3>
+            <p>Оставьте заявку или получите бесплатную консультацию, позвонив нам по телефону: <span>+7 (495) 643 85 88</span>
+            </p>
+        </div>
+        <div class="popup-content">
+            <form class="popup-form">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="input-block"><span>ФИО<i class="required">*</i></span>
+                            <input type="text" name="user-fio">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="input-block"><span>Телефон </span>
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-form-bottom"><span class="popup-form-caption">Все поля обязательны для заполнения</span>
+                    <button class="btn btn-spacing btn-long"><span>Оставить заявку</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- start popup callback-->
+    <!-- end popups-->
     <!--END out-->
     <!--LOAD SCRIPTS-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwVP6JlQ0C8tmJoDFh_piM3F6TMxu1n20"></script>

@@ -402,3 +402,230 @@ img
   +rmin($screen-sm)
     padding: 70px 0
 /* end page-title */
+
+/* start popup-styles */
+.popup
+  max-width: 910px
+  position: relative
+  margin: 10px auto 0
+  background-color: #474e56
+  color: #bda177
+  border: 1px solid $color-gold
+  .btn
+    background-color: transparent
+    border-color: $color-gold
+    color: $color-gold
+    cursor: pointer
+    +r(767px)
+      width: 100%
+      min-width: 0
+  &-success
+    .popup-header
+      padding-bottom: 0
+    .popup-content
+      text-align: center
+      margin: 0 auto
+      padding: 20px 0 40px
+      h4
+        font-size: 19px
+        font-weight: 400
+        margin-bottom: 10px
+        margin-top: 0
+        +rmin($screen-sm)
+          font-size: 26px
+      p
+        font-size: 17px
+        line-height: 1.2
+        font-weight: 300
+        opacity: .9
+        margin: 0
+        +rmin($screen-sm)
+          font-size: 21px
+  +r(767px)
+    h4
+      font-size: 18px
+    p
+      font-size: 15px
+      span
+        display: block
+  +r(767px)
+    width: 95%
+  &-close
+    position: absolute
+    top: 19px
+    right: 22px
+    z-index: 4
+    width: 30px
+    height: 30px
+    border: 1px solid
+    background-color: transparent
+    padding: 0
+    border: 1px solid #bda177
+    cursor: pointer
+    transition: all 0.3s
+    border-radius: 50%
+    text-align: center
+    opacity: 0.6
+    &:focus
+      outline: none
+    +tr()
+    .cross
+      +burger(18px, 1px, 2px, $color-gold)
+      margin: 0 auto
+      +burger-to-cross()
+    &:hover
+      opacity: 1
+    +r(767px)
+      top: 14px
+      right: 14px
+  &:focus
+    outline: none
+  &:hover
+    opacity: 1
+  &-header
+    color: $color-gold
+    text-align: center
+    padding: 30px 10px 0
+    h3
+      font-size: 18px
+      font-weight: 400
+      margin-bottom: 0
+      margin-top: 0
+      text-transform: uppercase
+      +avenir()
+      letter-spacing: 3px
+      +rmin($screen-sm)
+        font-size: 39px
+    p
+      font-size: 15px
+      font-weight: 400
+      max-width: 550px
+      margin: 4px auto
+      span
+        font-weight: 700
+        margin-left: 4px
+      +rmin($screen-sm)
+        font-size: 19px
+  &-content
+    padding-top: 20px
+    padding-bottom: 20px
+    padding-left: 15px
+    padding-right: 15px
+    +rmin($screen-sm)
+      padding: 36px 10px 58px
+  &-form
+    max-width: 820px
+    margin: 0 auto
+    .row
+      margin-left: -5px
+      margin-right: -5px
+      > div
+        padding-left: 5px
+        padding-right: 5px
+    &-bottom
+      margin-top: 50px
+      text-align: center
+      position: relative
+      .button
+        display: block
+        margin: 0 auto
+    &-caption
+      display: block
+      margin-bottom: 20px
+      font-size: 18px
+      display: inline-block
+      position: absolute
+      top: 0
+      right: 0
+      width: 195px
+      text-align: right
+      +r(767px)
+        position: static
+        text-align: center
+
+/* start input-block */
+.input-block
+  width: 100%
+  border: 1px solid rgba($color-gold, 0.6)
+  box-sizing: border-box
+  border-radius: 5px
+  position: relative
+  font-size: 15px
+  margin: 5px 0
+  display: table
+  &.selected
+    border: 1px solid rgba($color-gold, 1)
+  +r(767px)
+    border: none
+    margin: 16px 0
+    &.selected
+      border: none
+  span
+    position: relative
+    display: table-cell
+    vertical-align: top
+    width: 1%
+    white-space: nowrap
+    box-sizing: content-box
+    left: 20px
+    top: 0
+    color: white
+    height: 52px
+    line-height: 53px
+    font-size: 18px
+    padding-right: 20px
+    z-index: 1
+    .required
+      font-size: 16px
+      font-style: normal
+      color: #b70d13
+      margin-left: 4px
+      display: none
+    &:after
+      content: ''
+      position: absolute
+      right: 0
+      top: 11px
+      height: 30px
+      width: 1px
+      background-color: rgba($color-gold, 0.7)
+    +r(767px)
+      position: static
+      display: block
+      margin-bottom: 8px
+      height: auto
+      line-height: 1
+      width: 100%
+      &:after
+        display: none
+  +r(767px)
+    border: none
+  input, textarea
+    height: 52px
+    border: none
+    display: table-cell
+    vertical-align: top
+    width: 100%
+    box-sizing: border-box
+    font-size: 15px
+    padding-right: 16px
+    padding-left: 30px
+    border-radius: 20px
+    background-color: transparent
+    color: $color-gold
+    &:focus
+      outline: none
+    +r(767px)
+      border: 1px solid rgba($color-gold, 1)
+      border-radius: 5px
+      padding-left: 16px
+      font-size: 14px
+      display: block
+  textarea
+    resize: none
+    vertical-align: top
+    height: 108px
+    padding-top: 17px
+    +r(767px)
+      padding-top: 8px
+/* end input-block */

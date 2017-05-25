@@ -1,0 +1,75 @@
+#popup-order.popup.popup-order.mfp-with-anim.mfp-hide
+  button.popup-close(onclick='$.magnificPopup.close()')
+    span.cross
+  .popup-header
+    h3 Оставить заявку
+    p Оставьте заявку или получите бесплатную консультацию, позвонив нам по телефону: #[span +7 (495) 643 85 88]
+  .popup-content
+    form.popup-form
+      .row
+        .col-xs-12.col-sm-12.col-md-12
+          .input-block
+            span
+              | ФИО
+              i.required *
+            input(type='text' name="user-fio")
+        .col-xs-12.col-sm-6.col-md-6
+          .input-block.input-block-mail
+            span 
+              | E-mail
+              i.required *
+            input(type='text' name="user-email")
+        .col-xs-12.col-sm-6.col-md-6
+          .input-block
+            span
+              | Телефон 
+            input(type='text')
+        .col-xs-12.col-sm-12.col-md-12
+          .input-block.input-block-textarea
+            span
+              | Сообщение 
+              i.required *
+            textarea(name="user-message")
+      .popup-form-bottom
+        span.popup-form-caption
+          | Все поля обязательны для заполнения
+        button.btn.btn-spacing.btn-long
+          span Оставить заявку
+// end popup-order
+// start popup success
+#popup-success.popup.popup-success.mfp-with-anim.mfp-hide
+  button.popup-close(onclick='$.magnificPopup.close()')
+    span.cross
+  .popup-header
+    h3 Спасибо!
+  .popup-content
+      h4 Ваша заявка успешно отправлена
+      p Наши менеджеры свяжутся с Вами в ближайшее время
+// start popup success
+// start popup callback
+#popup-callback.popup.popup-callback.mfp-with-anim.mfp-hide
+  button.popup-close(onclick='$.magnificPopup.close()')
+    span.cross
+  .popup-header
+    h3 Обратный звонок
+    p Оставьте заявку или получите бесплатную консультацию, позвонив нам по телефону: #[span +7 (495) 643 85 88]
+  .popup-content
+    form.popup-form
+      .row
+        .col-xs-12.col-sm-6.col-md-6
+          .input-block
+            span
+              | ФИО
+              i.required *
+            input(type='text' name="user-fio")
+        .col-xs-12.col-sm-6.col-md-6
+          .input-block
+            span
+              | Телефон 
+            input(type='text')
+      .popup-form-bottom
+        span.popup-form-caption
+          | Все поля обязательны для заполнения
+        button.btn.btn-spacing.btn-long
+          span Оставить заявку
+// start popup callback

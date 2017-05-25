@@ -1,0 +1,15 @@
+//- title: Index Page
+extends layouts/_layout
+block head
+  - var title = 'Main page'
+  - var headerInner = true
+  - var active = 2
+
+block content
+  section.popups
+    .container
+        h1.section-heading Всплывашки
+        ul
+          li: a.popup-link(href="#popup-order") Отправить заявку
+          li: a.popup-link(href="#popup-callback") Заказать звонок
+          li: a.popup-link(href="#popup-success") Благодарности
