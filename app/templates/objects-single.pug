@@ -98,8 +98,10 @@ block content
   .object-location-info(data-aos="fade-in")
     h4 Хорошевское ш., владение 25
     p посмотреть на карте
-    a.to-location-link(href="#location" data-anchor data-aos-duration="1000" data-aos-anchor=".object-location-info" data-aos="zoom-out" data-aos-delay="400")
+    a.to-location-link(href="#" data-aos-duration="1000" data-aos-anchor=".object-location-info" data-aos="zoom-in" data-aos-delay="400")
       include data/arr-down.svg
+    .map-wrapper
+      .google-map-secondary
   // end object-location-info
 
   // start object-description
@@ -234,9 +236,8 @@ block content
           span.from 1
           span.to 10
   // end object-features
-
   // start object-location
-  .object-location#location
+  .object-location.js-map-container#location
     button.marker-trigger.js-marker-trigger(data-aos="fade-up" data-aos-anchor=".object-location" data-aos-duration="1700")
       .cross
     .google-map
@@ -246,6 +247,6 @@ block content
         .wrap
           h4 Хорошевское ш.,22
   .object-end
-     a.btn.btn-long.btn-spacing.popup-link(href="popup-order" data-aos="fade-up" data-aos-delay="400")
+     a.btn.btn-long.btn-spacing.popup-link(href="#popup-order" data-aos="fade-up" data-aos-delay="100")
         span Оставить заявку
   // end object-location

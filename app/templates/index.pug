@@ -8,19 +8,19 @@ block head
 block content
   // start promo
   section.promo
-    nav.frontpage-nav
-      ul.reset-list
-        li: a.active(href="#promo" role="button" data-anchor): span
-        li: a(href="#about-us" role="button" data-anchor): span
-        li: a(href="#news-offers" role="button" data-anchor): span
-        li: a(href="#footer" role="button" data-anchor): span
+    //- nav.frontpage-nav
+      //- ul.reset-list
+        //- li: a.active(href="#promo" role="button" data-anchor): span
+        //- li: a(href="#about-us" role="button" data-anchor): span
+        //- li: a(href="#news-offers" role="button" data-anchor): span
+        //- li: a(href="#footer" role="button" data-anchor): span
     .promo-backgrounds.js-promo-backgrounds
-      .promo-background.js-promo-background(style="background: url(../images/promo-bg2.jpg) no-repeat center / cover")
-      .promo-background.js-promo-background(style="background: url(../images/promo-bg2.jpg) no-repeat center / cover")
-      .promo-background.js-promo-background(style="background: url(../images/promo-bg3.jpg) no-repeat center / cover")
-      .promo-background.js-promo-background(style="background: url(../images/promo-bg4.jpg) no-repeat center / cover")
-      .promo-background.js-promo-background(style="background: url(../images/promo-bg5.jpg) no-repeat center / cover")
-      .promo-background.js-promo-background(style="background: url(../images/promo-bg6.jpg) no-repeat center / cover")
+      .promo-background.js-promo-background(style="background: url(images/promo-bg2.jpg) no-repeat center / cover")
+      .promo-background.js-promo-background(style="background: url(images/promo-bg2.jpg) no-repeat center / cover")
+      .promo-background.js-promo-background(style="background: url(images/promo-bg3.jpg) no-repeat center / cover")
+      .promo-background.js-promo-background(style="background: url(images/promo-bg4.jpg) no-repeat center / cover")
+      .promo-background.js-promo-background(style="background: url(images/promo-bg5.jpg) no-repeat center / cover")
+      .promo-background.js-promo-background(style="background: url(images/promo-bg6.jpg) no-repeat center / cover")
     .container
       h1.promo-heading
         span.promo-heading-top(data-aos="fade-up" data-aos-anchor=".promo" data-aos-duration="700") холдинг «Sezar Group» —
@@ -81,10 +81,10 @@ block content
               include data/cup.svg
               img(src="images/skype.png" alt="")
           a.circle-item.brown-secondary(style="top: 110px; right: 68px" data-aos="fade-in" data-aos-anchor=".circles-container" data-aos-delay="2000" data-aos-duration="1000")
-           .circle-content
+            .date 2014
+            .circle-content
               include data/cup.svg
               img(src="images/skype.png" alt="")
-              .date 2014
           a.circle-item.brown(style="top: 40px; right: 168px" data-aos="fade-in" data-aos-anchor=".circles-container" data-aos-delay="2000" data-aos-duration="1000")
             .circle-content
               include data/cup.svg
@@ -100,15 +100,15 @@ block content
             .circle-content
               include data/cup.svg
               img(src="images/skype.png" alt="")
-          .circle.circle-1(data-aos="zoom-in1" data-aos-anchor=".circles-container" data-aos-delay="900" data-aos-duration="1000")
-          .circle.circle-2(data-aos="zoom-in1" data-aos-anchor=".circles-container" data-aos-delay="600" data-aos-duration="1000")
-          .circle.circle-3(data-aos="zoom-in1" data-aos-anchor=".circles-container" data-aos-delay="300" data-aos-duration="1000")
+          .circle.circle-1(data-aos="" data-aos-anchor=".circles-container" data-aos-delay="500" data-aos-duration="2000")
+          .circle.circle-2(data-aos="" data-aos-anchor=".circles-container" data-aos-delay="400" data-aos-duration="2000")
+          .circle.circle-3(data-aos="" data-aos-anchor=".circles-container" data-aos-delay="300" data-aos-duration="1000")
         .about-us-logo
           .logo-circle(data-aos="zoom-in1" data-aos-anchor=".circles-container" data-aos-duration="1000")
             img(src="images/logo-fs.png" alt="Sezar Group")
           .logo-text
-            span(data-aos="fade-left" data-aos-anchor=".circles-container" data-aos-delay="1400" data-aos-duration="1000") Sezar
-            span(data-aos="fade-right" data-aos-anchor=".circles-container" data-aos-delay="1700" data-aos-duration="1000") Group
+            span(data-aos="fade-right" data-aos-anchor=".circles-container" data-aos-delay="1400" data-aos-duration="1000") Sezar
+            span(data-aos="fade-left" data-aos-anchor=".circles-container" data-aos-delay="1700" data-aos-duration="1000") Group
       .about-us-group-text
         .row
           .about-us-text(data-aos="fade-left" data-aos-anchor=".circles-container" data-aos-delay="1900" data-aos-duration="1000") Более 10 лет результативной работы принесли холдингу Sezar Group портфель знаковых объектов, безупречную репутацию, а также надежных партнеров
@@ -123,6 +123,8 @@ block content
       data-aos="fade-right"
       data-aos-anchor=".news-offers"
       data-aos-duration="700")
+      span.btn.btn-long.btn-spacing
+        span Подробнее
       .background(style="background: url(images/news-offer1.jpg) no-repeat center / cover")
       .dates.dates-block-offer
         .date-block.date-block-offer
@@ -143,6 +145,8 @@ block content
       data-aos-anchor=".news-offers"
       data-aos-duration="700"
       data-aos-delay="400")
+      span.btn.btn-long.btn-spacing
+        span Подробнее
       .background(style="background: url(images/news-offer2.jpg) no-repeat center / cover")
       .dates
         .date-block
@@ -157,6 +161,8 @@ block content
       data-aos-anchor=".news-offers"
       data-aos-duration="700"
       data-aos-delay="800")
+      span.btn.btn-long.btn-spacing
+        span Подробнее
       .dates
         .date-block
           div.digit 18
@@ -170,6 +176,8 @@ block content
       data-aos-anchor=".news-offers"
       data-aos-duration="700"
       data-aos-delay="1200")
+      span.btn.btn-long.btn-spacing
+        span Подробнее
       .background(style="background: url(images/news-offer3.jpg) no-repeat center / cover")
       .dates
         .date-block

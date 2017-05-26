@@ -278,13 +278,16 @@ img
   text-align: center
   float: left
   width: 50%
-  padding: 60px 0
+  padding: 60px 10px
   font-size: 20px
   text-transform: uppercase
   text-decoration: none
   color: #987641
   border-bottom: 1px solid #e1e1e1
   position: relative
+  +tr()
+  h3
+    font-weight: 200
   .icon-wrap
     height: 63px
   +avenir()
@@ -408,7 +411,7 @@ img
   max-width: 910px
   position: relative
   margin: 10px auto 0
-  background-color: #474e56
+  background-color: transparent
   color: #bda177
   border: 1px solid $color-gold
   .btn
@@ -501,6 +504,7 @@ img
       font-weight: 400
       max-width: 550px
       margin: 4px auto
+      color: white
       span
         font-weight: 700
         margin-left: 4px
@@ -536,9 +540,9 @@ img
       display: inline-block
       position: absolute
       top: 0
-      right: 0
+      left: 0
       width: 195px
-      text-align: right
+      text-align: left
       +r(767px)
         position: static
         text-align: center

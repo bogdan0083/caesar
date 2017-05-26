@@ -41,6 +41,9 @@
     top: 0
     left: 0
     background-color: rgba(black, 0.55)
+    +tr()
+  &.promo-hovered:after
+    opacity: 0
   +rmin($screen-sm)
     background-attachment: fixed
     .hidden
@@ -438,12 +441,23 @@
       max-width: 80%
       max-height: 80%
       opacity: 0
+  .circle
+    +rmin($screen-sm)
+      opacity: 0
+      transform: scale(0.2)
+      transition: none !important
+      animation-delay: 2s
+      &.aos-animate
+        animation: zoomBounce 2s ease
+        animation-fill-mode: forwards
   .circle-1
     height: 540px
     width: 540px
     margin: auto
     border: 1px solid #dfdfdf
     border-radius: 50%
+    +rmin($screen-sm)
+      animation-delay: .3s !important
   .circle-2
     height: 460px
     width: 460px
@@ -455,6 +469,9 @@
     margin-left: -230px
     margin-top: -230px
     border-radius: 50%
+    animation-delay: .5s
+    +rmin($screen-sm)
+      animation-delay: .2s !important
   .circle-3
     height: 316px
     width: 316px
@@ -466,7 +483,21 @@
     margin-left: -158px
     margin-top: -158px
     border-radius: 50%
+    animation-delay: .9s
+    +rmin($screen-sm)
+      animation-delay: .1s !important
 /* end about-us */
+
+@keyframes zoomBounce
+  0%
+    transform: scale(0.2)
+    opacity: 0
+  70%
+    transform: scale(1.2)
+    opacity: 1
+  100%
+    transform: scale(1)
+    opacity: 1
 
 .btn
   text-decoration: none
@@ -590,6 +621,27 @@
         display: none
     &.no-bg:before
       display: none
+    .btn
+      position: absolute
+      z-index: 20
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      margin: auto
+      width: 200px
+      line-height: 46px
+      color: $color-text
+      font-weight: 300
+      background-color: white
+      text-transform: uppercase
+      +avenir(300)
+      +tr()
+      display: none
+      +rmin($screen-sm)
+        display: block
+        opacity: 0
+        transform: translateY(20px)
     .background
       position: absolute
       left: 0
@@ -625,7 +677,6 @@
           background-color: $color-gold
           opacity: .14
           margin-top: -85px
-
     .text
       font-size: 19px
     .news-offers-text
@@ -678,6 +729,10 @@
         opacity: 0
       .background
         transform: scale(1.2)
+      .btn
+        +rmin($screen-sm)
+          opacity: 1
+          transform: none
       &:before
         transform: translateY(-101%)
 
@@ -776,7 +831,7 @@
   bottom: -50px
   z-index: 20
   background: white
-  box-shadow: 0 0 10px 0 rgba(black, 0.1)
+  box-shadow: 0 0 6px 0 rgba(black, 0.1)
   +tr()
   svg
     position: absolute
@@ -786,7 +841,11 @@
     left: 0
     margin: auto
   svg path
+    fill: #a08253
     +tr()
+
+.like
+  background: white url(../images/heart.png) no-repeat center
 
 .circle-link:hover
   background-color: #a4875a
@@ -813,10 +872,11 @@
     text-decoration: none
     color: #dddddd
     font-size: 15px
+    +tr()
     +rmin($screen-sm)
       padding-left: 50px
       padding-right: 50px
-    &.active
+    &.active, &:hover
       color: #fff
       &:before
         content: ''
@@ -893,9 +953,10 @@
 /* start object-location-info */
 .object-location-info
   text-align: center
-  padding: 50px 0 40px
+  padding: 50px 0 0
   background-color: #f5f5f5
   position: relative
+  +clr()
   h4
     font-size: 18px
     color: #383838
@@ -908,7 +969,7 @@
     margin-top: 0
     color: #383838
     font-size: 15px
-    margin-bottom: 0
+    margin-bottom: 40px
     opacity: .6
   .to-location-link
     border: 1px solid #e5e5e5
@@ -918,9 +979,10 @@
     width: 56px
     height: 56px
     bottom: -28px
+    z-index: 2
     left: 50%
     margin-left: -28px
-    +tr()
+    transition: all 0.3s, opacity 1s 0.3s, transform 1s 0.3s !important
     svg
       position: absolute
       top: 0
@@ -935,6 +997,22 @@
       background-color: $color-gold
       svg path
         fill: white
+  .map-wrapper
+    height: 0
+    width: 100%
+    position: relative
+    +tr()
+    &.active
+      height: 200px
+      +rmin($screen-sm)
+        height: 400px
+  .google-map-secondary
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    width: 100%
 
 /* end object-location-info */
 
@@ -1181,44 +1259,45 @@
         height: 3px
         background-color: #9a805f
         transform: translateX(-101%)
-        transition: all 2s
+        transition: transform 2s, background 0.3s
       &:after
         top: auto
         bottom: 0
         transform: translateX(101%)
-      .wrap
-        display: block
-        padding: 10px 20px
-        text-decoration: none
-        font-weight: 700
-        text-transform: uppercase
-        position: relative
-        padding-top: 100px
-        &:before, &:after
-          content: ''
-          position: absolute
-          top: 0
-          left: 0
-          width: 3px
-          height: 100%
-          background-color: #9a805f
-          transform: translateY(-101%)
-          transition: all 2s
-        &:after
-          top: auto
-          bottom: 0
-          left: auto
-          right: 0
-          transform: translateY(101%)
-        +rmin($screen-sm)
-          height: 380px
-          padding-top: 220px
+    .wrap
+      display: block
+      text-decoration: none
+      font-weight: 700
+      text-transform: uppercase
+      position: relative
+      padding-top: 220px
+      padding-bottom: 100px
+      padding-left: 20px
+      padding-right: 20px
+      &:before, &:after
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 3px
+        height: 100%
+        background-color: #9a805f
+        transform: translateY(-101%)
+        transition: transform 2s, background 0.3s
+      &:after
+        top: auto
+        bottom: 0
+        left: auto
+        right: 0
+        transform: translateY(101%)
   h4
     font-size: 18px
     color: #bda177
     text-transform: uppercase
     letter-spacing: 3px
     +avenir()
+    +tr()
+    font-weight: 300
     +rmin($screen-sm)
       letter-spacing: 8px
   .marker-trigger
@@ -1227,35 +1306,25 @@
     height: 70px
     position: absolute
     top: 66px
-    left: 50%
+    right: 50%
     z-index: 20
-    margin-left: -35px
+    margin-right: -35px
     border-radius: 50%
     border: 1px solid #72695a
     background: #484e55
     cursor: pointer
-    transition: opacity 1s, border-color 0.3s 0s, transform 1s !important
+    transition: opacity 1s, border-color 0.3s 0s, transform 1s, top 0.6s, right 0.6s !important
     &:hover
-      border-color: white
+      border-color: #ffd178
       &:before
         opacity: 0
       &:after
         opacity: 1
-      // ~ div.object-location-content
-        // .inner
-          // &:before,
-          // &:after,
-          // .wrap:before,
-          // .wrap:after
-            // transition-duration: 0.3s
-            // background-color: white
-          // h4
-            // color: white
     +rmin($screen-sm)
       width: 110px
       height: 110px
       top: 168px
-      margin-left: -55px
+      margin-right: -55px
     &:focus
       outline: none
     &:before, &:after
@@ -1276,22 +1345,34 @@
         margin-top: -23px
     &:after
       opacity: 0
-      background-image: url(../images/marker-white.png)
+      background-image: url(../images/marker-yellow.png)
     +tr()
     .cross
       position: absolute
       margin: auto
       top: 0
-      +burger(50px, 3px, 3px, #9a805f)
+      +burger(20px, 3px, 3px, #9a805f)
       +burger-to-cross()
       +tr()
       opacity: 0
     &.active
       background: #484e55
+      right: 70px
+      top: 20px
+      width: 60px
+      height: 60px
       &:before, &:after
         opacity: 0
       .cross
         opacity: 1
+  &.marker-hovered
+    h4
+      color: #ffd178
+    .inner:before,
+    .inner:after,
+    .wrap:before,
+    .wrap:after
+      background-color: #ffd178
 
 /* end object-location */
 
@@ -1607,6 +1688,7 @@
   &-name
     font-size: 19px
     color: #3c3c3c
+    +tr()
   &-more
     font-size: 15px
     line-height: 1.6
@@ -1629,7 +1711,7 @@
       position: absolute
     .num
       font-size: 30px
-      +avenir()
+      +avenir(300)
 
 .news-group
   +clr()
@@ -1642,6 +1724,8 @@
       opacity: 0
     .background
       transform: scale(1.2)
+    .news-info-name
+      color: $color-gold
 
 .news-item:nth-child(2n+1)
   +rmin($screen-sm)
@@ -1767,7 +1851,7 @@
     position: relative
     .num
       font-size: 30px
-      +avenir()
+      +avenir(300)
   .square
     width: 282px
     height: 100%
@@ -1807,14 +1891,62 @@
           transform: none
 /* end .news-promo */
 
+.link-back
+  text-align: center
+  text-decoration: none
+  padding-top: 30px
+  top: 0
+  left: 0
+  width: 100%
+  position: absolute
+  z-index: 10
+  span
+    margin-bottom: 12px
+    display: block
+  .arr-left
+    overflow: hidden
+    height: 27px
+    width: 211px
+    margin: 10px auto 0
+    position: relative
+    text-align: center
+    margin: 0 auto
+    display: block
+    +tr()
+    &:before
+      content: ''
+      top: 50%
+      margin-top: -1px
+      left: 0
+      width: 211px
+      background-color: #bdbdbd
+      height: 1px
+      position: absolute
+      +tr()
+    svg
+      position: absolute
+      top: 0
+      left: -1px
+      +tr()
+    &:before, svg
+      opacity: 0.4
+  &:hover
+    .arr-left:before, svg
+      opacity: 1
+
 .news-article-top
   padding-bottom: 100px
+  padding-top: 130px
   +rmin($screen-sm)
     overflow: visible
+  &:after
+    display: none
   .inner
     &:before, &:after
       display: none
-
+  .inner:hover
+    .title
+      color: #ba9d64 !important
 
 /* start .news-item-full */
 .news-item-full
@@ -1867,7 +1999,7 @@
     position: relative
     .num
       font-size: 30px
-      +avenir()
+      +avenir(300)
 /* end .news-full */
 
 /* start post */
@@ -1922,6 +2054,10 @@
   background-color: #eeeeee
   position: relative
   +avenir()
+  span
+    position: relative
+    z-index: 5
+    background-color: #eee
   .arr
     display: none
     +rmin($screen-sm)
@@ -2062,8 +2198,9 @@
     float: left
     width: 50%
     height: 400px
-  +rmin($screen-md)
     display: table
+    padding-top: 0
+    padding-bottom: 0
     .inner
       display: table-cell
       vertical-align: middle
@@ -2071,6 +2208,7 @@
         max-width: 600px
         margin: auto
         position: relative
+  +rmin($screen-md)
   &-type
     font-size: 18px
     letter-spacing: 3px
@@ -2123,8 +2261,8 @@
     .background
       transform: scale(1.2)
     .offer-info-more
-      color: $color-text
-      border-color: $color-text
+      color: $color-gold
+      border-color: $color-gold
 
 .offer-item:nth-child(2n+1)
   +rmin($screen-sm)
@@ -2233,3 +2371,152 @@
     p, .section-heading
       color: white
 /* end offer-result-link */
+
+.popup-link:focus
+  outline: none
+
+.google-map
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 2
+
+/* start contact-location */
+.contact-location
+  position: relative
+  .contact-location-content
+    padding: 30px 20px
+    z-index: 10
+    background-color: rgba(#484e55, 0.9)
+    position: relative
+    text-align: center
+    +tr()
+    &.hidden
+      opacity: 0
+      z-index: 0
+    +rmin($screen-sm)
+      padding: 70px
+    .inner
+      overflow: hidden
+      &.aos-animate
+        &:before,
+        &:after,
+        .wrap:before,
+        .wrap:after
+          transform: none
+      &:before, &:after
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 3px
+        background-color: #9a805f
+        transform: translateX(-101%)
+        transition: all 2s
+      &:after
+        top: auto
+        bottom: 0
+        transform: translateX(101%)
+      .wrap
+        display: block
+        padding: 10px 20px
+        text-decoration: none
+        font-weight: 700
+        text-transform: uppercase
+        position: relative
+        padding-top: 100px
+        &:before, &:after
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          width: 3px
+          height: 100%
+          background-color: #9a805f
+          transform: translateY(-101%)
+          transition: all 2s
+        &:after
+          top: auto
+          bottom: 0
+          left: auto
+          right: 0
+          transform: translateY(101%)
+        +rmin($screen-sm)
+          height: 380px
+          padding-top: 220px
+  h4
+    font-size: 18px
+    color: #bda177
+    text-transform: uppercase
+    letter-spacing: 3px
+    +avenir()
+    +rmin($screen-sm)
+      letter-spacing: 8px
+  .marker-trigger
+    padding: 0
+    width: 70px
+    height: 70px
+    position: absolute
+    top: 66px
+    right: 50%
+    z-index: 20
+    margin-left: -35px
+    border-radius: 50%
+    border: 1px solid #72695a
+    background: #484e55
+    cursor: pointer
+    transition: opacity 1s, border-color 0.3s 0s, transform 0.8s, right 1s !important
+    &:hover
+      border-color: white
+      &:before
+        opacity: 0
+      &:after
+        opacity: 1
+    +rmin($screen-sm)
+      width: 110px
+      height: 110px
+      top: 168px
+      margin-left: -55px
+    &:focus
+      outline: none
+    &:before, &:after
+      content: ''
+      top: 50%
+      left: 50%
+      position: absolute
+      width: 24px
+      height: 36px
+      margin-left: -12px
+      margin-top: -18px
+      background: url(../images/marker.png) no-repeat center / 100% 100%
+      +tr()
+      +rmin($screen-sm)
+        width: 34px
+        height: 46px
+        margin-left: -17px
+        margin-top: -23px
+    &:after
+      opacity: 0
+      background-image: url(../images/marker-white.png)
+    +tr()
+    .cross
+      position: absolute
+      margin: auto
+      top: 0
+      +burger(50px, 3px, 3px, #9a805f)
+      +burger-to-cross()
+      +tr()
+      opacity: 0
+    &.active
+      background: #484e55
+      &:before, &:after
+        opacity: 0
+      .cross
+        opacity: 1
+
+/* end object-location */
+
+

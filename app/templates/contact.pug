@@ -1,0 +1,21 @@
+//- title: Index Page
+extends layouts/_layout
+block head
+  - var title = 'Main page'
+  - var headerInner = true
+  - var active = 5
+  - var noFooter = true
+block content
+  section.contact-page
+    .contact
+      // start object-location
+      .contact-location#location
+        button.marker-trigger.js-marker-trigger(data-aos="fade-up" data-aos-anchor=".object-location" data-aos-duration="1700")
+          .cross
+        .google-map-contact
+        .overlay
+        .contact-location-content
+          .inner(data-aos="fade-in" data-aos-anchor=".object-location" data-aos-duration="2000")
+            .wrap
+              h4 Хорошевское ш.,22
+      // end object-location

@@ -10,9 +10,13 @@ block content
   .news-page
     section.news
       // start news-article-top
-      .news-article-top(style="background-image: url(../images/news3.jpg)")
+      .news-article-top(style="background-image: url(images/news3.jpg)")
+        a.link-back(href="#" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="200" data-aos-anchor=".news-article-top")
+          span К списку новостей
+          .arr-left
+            include data/arr-secondary-left.svg
         .container
-          .inner(data-aos="fade-in" data-aos-duration="1000" data-aos-delay="200" data-aos-anchor=".news-item-promo")
+          .inner(data-aos="fade-in" data-aos-duration="1000" data-aos-delay="200" data-aos-anchor=".news-article-top")
             .date
               .num 18
               .month окт
@@ -29,13 +33,13 @@ block content
             span.icon.icon-link
             span.text sz-rasskazovo.ru
       h2.watch-also(data-aos="fade-in")
-        span(data-aos="fade-up" data-aos-duration="800" data-aos-anchor=".watch-also" data-aos-delay="400") Смотрите также
-        .arr(data-aos="fade-up" data-aos-duration="800" data-aos-anchor=".watch-also" data-aos-delay="700")
+        span(data-aos="fade-down" data-aos-duration="800" data-aos-anchor=".watch-also" data-aos-delay="400") Смотрите также
+        .arr(data-aos="fade-down" data-aos-duration="800" data-aos-anchor=".watch-also" data-aos-delay="700")
       .news-group
         // start news-item
         a.news-item(href="#")
           .news-image(href="#" data-aos="fade-left-big" data-aos-duration="1000")
-            .background(style="background-image: url(../images/news1.jpg)")
+            .background(style="background-image: url(images/news1.jpg)")
           .news-info(data-aos="fade-right-big" data-aos-duration="1000")
             .inner
               .news-info-content
@@ -48,7 +52,7 @@ block content
         // start news-item
         a.news-item(href="#")
           .news-image(href="#" data-aos="fade-right-big" data-aos-duration="1000")
-            .background(style="background-image: url(../images/news2.jpg)")
+            .background(style="background-image: url(images/news2.jpg)")
           .news-info(data-aos="fade-left-big" data-aos-duration="1000")
             .inner
               .news-info-content
